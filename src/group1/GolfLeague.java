@@ -1,6 +1,9 @@
 package group1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Scanner;
 
 public class GolfLeague {
@@ -20,9 +23,16 @@ public class GolfLeague {
 		int teamScore;
 		int teamRank;
 		
-		Hashtable<String, Player> players = new Hashtable();
-		Hashtable<String, Team> teams = new Hashtable();
+		//Array of 4 players for a team
+		Player[] players = new Player[4];
 		
+		//Array of 10 teams in league
+		Team[] league = new Team[10];
+		
+		//Creates an arrayList for a team to have 4 players put in
+		List teamMembers = new ArrayList<Player>();
+		
+		//Users enter data for 4 players
 		for(int index = 0; index < 4; index++){
 			System.out.println("Enter player's first name: ");
 			firstName = input.nextLine();
@@ -39,24 +49,26 @@ public class GolfLeague {
 			System.out.println("Enter player's average: ");
 			playerAverage = input.nextDouble();
 			
-			players.put(lastName, new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage));
+			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
 		}
 		
-		while(true){
+		teamMembers.add(Arrays.asList(players));
+
+		for(int index = 0; index < 10; index++){
 			System.out.println("Enter team name: ");
 			teamName = input.nextLine();
 		
 				if(teamName == "quit"){
 					break;
 				}
-	
 			
 			System.out.println("Enter team score: ");
 			teamScore = input.nextInt();
 			System.out.println("Enter team rank: ");
 			teamRank = input.nextInt();
 			
-			teams.put(teamName, new Team(teamName, teamScore, teamRank));
+			league[index] = new Team(teamName, teamScore, teamRank);
+
 		}
 		
 	}
