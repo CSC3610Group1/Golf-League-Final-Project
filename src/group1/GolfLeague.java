@@ -28,6 +28,8 @@ public class GolfLeague {
 		
 		//Array of 10 teams in league
 		Team[] league = new Team[10];
+
+		Object[][] topTeams = new Object[10][2];
 		
 		//Creates an arrayList for a team to have 4 players put in
 		List teamMembers = new ArrayList<Player>();
@@ -69,8 +71,17 @@ public class GolfLeague {
 			
 			league[index] = new Team(teamName, teamScore, teamRank);
 
+			topTeams[teamRank - 1][0] = teamName;
+			topTeams[teamRank - 1][1] = teamScore;
+
 		}
-		
+
+		for(int i = 0; i < topTeams.length; i ++){
+
+
+				System.out.println("Rank: " + (i+1) + " Team: " + topTeams[i][0] + " Score: " + topTeams[i][1]);
+
+		}
 	}
 
 }
