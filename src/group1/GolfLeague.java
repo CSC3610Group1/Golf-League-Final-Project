@@ -2,11 +2,10 @@ package group1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Scanner;
 
-public class GolfLeague {
+public class GolfLeague extends getPlayerData {
 
 	public static void main(String[] args) {
 		
@@ -22,7 +21,7 @@ public class GolfLeague {
 		String teamName;
 		int teamScore;
 		int teamRank;
-		
+
 		//Array of 4 players for a team
 		Player[] players = new Player[4];
 		
@@ -33,7 +32,7 @@ public class GolfLeague {
 		
 		//Creates an arrayList for a team to have 4 players put in
 		List teamMembers = new ArrayList<Player>();
-		
+
 		//Users enter data for 4 players
 		for(int index = 0; index < 4; index++){
 			System.out.println("Enter player's first name: ");
@@ -51,7 +50,7 @@ public class GolfLeague {
 			System.out.println("Enter player's average: ");
 			playerAverage = input.nextDouble();
 			
-			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
+			//players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage, joinedTeam);
 		}
 		
 		teamMembers.add(Arrays.asList(players));
@@ -82,6 +81,8 @@ public class GolfLeague {
 				System.out.println("Rank: " + (i+1) + " Team: " + topTeams[i][0] + " Score: " + topTeams[i][1]);
 
 		}
+
 	}
+
 
 }
