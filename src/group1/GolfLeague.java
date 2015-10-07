@@ -51,7 +51,7 @@ public class GolfLeague {
 			System.out.println("Enter player's average: ");
 			playerAverage = input.nextDouble();
 			
-			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
+			//players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
 		}
 		
 		teamMembers.add(Arrays.asList(players));

@@ -2,6 +2,8 @@
 
 package group1;
 
+import java.util.Date;
+
 public class Player {
 	
 	private String firstName;
@@ -10,15 +12,15 @@ public class Player {
 	private int playerRank;
 	private int handicap;
 	private int timesPlayed;
-	private double playerAverage;
-	
+	private int playerAverage;
+	private Date joinedTeam;
 	//Default constructor
 	Player(){
 		
 	}
 	
 	//Constructor with parameters
-	Player(String fname, String lname, int score, int rank, int hcap, int times, double average){
+	Player(String fname, String lname, int score, int rank, int hcap, int times, int average, Date joined){
 		firstName = fname;
 		lastName = lname;
 		playerScore = score;
@@ -26,6 +28,7 @@ public class Player {
 		handicap = hcap;
 		timesPlayed = times;
 		playerAverage = average;
+		joinedTeam = joined;
 	}
 	
 	public String getFirstName() {
@@ -67,8 +70,10 @@ public class Player {
 	public double getPlayerAverage() {
 		return playerAverage;
 	}
-	public void setPlayerAverage(double playerAverage) {
+	public void setPlayerAverage(int playerAverage) {
 		this.playerAverage = playerAverage;
 	}
+	public void setJoinedTeam(Date date){this.joinedTeam = date;}
+	public Date getJoinedTeam(){return joinedTeam;}
 	
 }
