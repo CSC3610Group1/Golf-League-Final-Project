@@ -2,6 +2,11 @@
 
 package group1;
 
+<<<<<<< Updated upstream
+=======
+import java.util.Comparator;
+
+>>>>>>> Stashed changes
 import java.util.Date;
 
 public class Player {
@@ -81,4 +86,12 @@ public class Player {
 		this.joinedTeam = date;
 	}
 	
+	public static Comparator<Player> PlayerRankComparator = new Comparator<Player>() {
+
+		public int compare(Player p1, Player p2) {
+		   int playerRank1 = p1.getPlayerRank();
+		   int playerRank2 = p2.getPlayerRank();
+
+		   return playerRank1 - playerRank2;
+	    }};
 }
