@@ -34,9 +34,9 @@ public class GolfLeague {
 		//Users enter data for 4 players
 		for(int index = 0; index < 4; index++){
 			System.out.println("Enter player's first name: ");
-			firstName = input.nextLine();
+			firstName = input.next();
 			System.out.println("Enter player's last name: ");
-			lastName = input.nextLine();
+			lastName = input.next();
 			System.out.println("Enter player's score: ");
 			playerScore = input.nextInt();
 			System.out.println("Enter player's rank: ");
@@ -50,6 +50,7 @@ public class GolfLeague {
 
 			
 			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage,date);
+			System.out.println("Player entered...");
 		}
 		
 		teamMembers.add(Arrays.asList(players));
