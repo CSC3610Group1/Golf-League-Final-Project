@@ -34,30 +34,30 @@ public class getPlayerData {
                 System.out.println("Creating statement...");
                 stmt = conn.createStatement();
                 String sql;
-                sql = "SELECT first_name, last_name, handicap, score, rank, times_played, average, joined_team FROM players";
+                sql = "SELECT first_name, last_name, handicap, score, rank, times_played, average FROM players";
                 ResultSet rs = stmt.executeQuery(sql);
 
                 //STEP 5: Extract data from result set
                 while (rs.next()) {
                     //Retrieve by column name
                     String fName = rs.getString("first_name");
-                    String lName = rs.getString("lastName");
+                    String lName = rs.getString("last_name");
                     int handicap = rs.getInt("handicap");
                     int score = rs.getInt("score");
                     int rank = rs.getInt("rank");
                     int timesPlayed = rs.getInt("times_played");
                     int average = rs.getInt("average");
-                    Date joinedTeam = rs.getDate("joined_team");
+
 
 
                     //Create player object and add to player list
-                    player = new Player(fName, lName, score, rank, handicap, timesPlayed, average, joinedTeam);
+                    player = new Player(fName, lName, score, rank, handicap, timesPlayed, average);
                     playerList.add(player);
 
                 }
 
                 for(Player p: playerList){
-                    System.out.println("Player name: " + p.getFirstName() + " " + " " + p.getLastName() + "\nDate joined: " + p.getJoinedTeam());
+                    System.out.println("Player name: " + p.getFirstName() + " " + " " + p.getLastName() + "\nHandicap: " + p.getHandicap());
                 }
                 //STEP 6: Clean-up environment
                 rs.close();

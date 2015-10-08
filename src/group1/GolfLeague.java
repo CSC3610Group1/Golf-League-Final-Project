@@ -22,7 +22,7 @@ public class GolfLeague {
 		int playerRank;
 		int handicap;
 		int timesPlayed;
-		double playerAverage;
+		int playerAverage;
 		String teamName;
 		int teamScore;
 		int teamRank;
@@ -41,9 +41,9 @@ public class GolfLeague {
 		//Users enter data for 4 players
 		for(int index = 0; index < 4; index++){
 			System.out.println("Enter player's first name: ");
-			firstName = input.nextLine();
+			firstName = input.next();
 			System.out.println("Enter player's last name: ");
-			lastName = input.nextLine();
+			lastName = input.next();
 			System.out.println("Enter player's score: ");
 			playerScore = input.nextInt();
 			System.out.println("Enter player's rank: ");
@@ -53,9 +53,9 @@ public class GolfLeague {
 			System.out.println("Enter player's times played: ");
 			timesPlayed = input.nextInt();
 			System.out.println("Enter player's average: ");
-			playerAverage = input.nextDouble();
+			playerAverage = input.nextInt();
 			
-			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage, date);
+			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
 		}
 		
 		teamMembers.add(Arrays.asList(players));
@@ -71,9 +71,9 @@ public class GolfLeague {
 		Collections.sort(teamMembers, Player.PlayerRankComparator);
 		
 		//Iterator used to walk through teamMembers list; displayed using while loop
-		Iterator iterator = teamMembers.iterator();
-			while (iterator.hasNext()){
-				System.out.print("\nTeam members sorted by rank: " + iterator.next());
+		Iterator it = teamMembers.iterator();
+			while (it.hasNext()){
+				System.out.print("\nTeam members sorted by rank: " + it.next());
 			}
 
 		for(int index = 0; index < 10; index++){
