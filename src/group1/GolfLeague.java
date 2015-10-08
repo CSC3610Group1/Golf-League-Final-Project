@@ -1,10 +1,6 @@
 package group1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class GolfLeague {
 
@@ -18,11 +14,12 @@ public class GolfLeague {
 		int playerRank;
 		int handicap;
 		int timesPlayed;
-		double playerAverage;
+		int playerAverage;
 		String teamName;
 		int teamScore;
 		int teamRank;
-		
+		Date date = new Date();
+		System.out.println(date);
 		//Array of 4 players for a team
 		Player[] players = new Player[4];
 		
@@ -49,9 +46,10 @@ public class GolfLeague {
 			System.out.println("Enter player's times played: ");
 			timesPlayed = input.nextInt();
 			System.out.println("Enter player's average: ");
-			playerAverage = input.nextDouble();
+			playerAverage = input.nextInt();
+
 			
-			//players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
+			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage,date);
 		}
 		
 		teamMembers.add(Arrays.asList(players));

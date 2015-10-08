@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="574232d7-8b24-46de-85c0-f9513a01cd21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/group1/getPlayerData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/group1/GolfLeague.class" afterPath="$PROJECT_DIR$/bin/group1/GolfLeague.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/group1/Player.class" afterPath="$PROJECT_DIR$/bin/group1/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Golf League Final Project.iml" afterPath="$PROJECT_DIR$/Golf League Final Project.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/group1/Team.class" afterPath="$PROJECT_DIR$/bin/group1/Team.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/GolfLeague.java" afterPath="$PROJECT_DIR$/src/group1/GolfLeague.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/Player.java" afterPath="$PROJECT_DIR$/src/group1/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Golf League Final Project.iws" />
@@ -31,10 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="getPlayerData.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GolfLeague.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/group1/GolfLeague.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.5653207">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getPlayerData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/group1/getPlayerData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.875969">
+            <state vertical-scroll-proportion="0.0">
               <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -46,8 +51,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.074074">
-              <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+            <state vertical-scroll-proportion="-18.25926">
+              <caret line="29" column="31" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -73,6 +78,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -84,8 +90,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/group1/Player.java" />
-        <option value="$PROJECT_DIR$/src/group1/GolfLeague.java" />
         <option value="$PROJECT_DIR$/src/group1/getPlayerData.java" />
+        <option value="$PROJECT_DIR$/src/group1/GolfLeague.java" />
       </list>
     </option>
   </component>
@@ -178,7 +184,7 @@
       <recent name="C:\Users\Rob\IdeaProjects\Golf-League-Final-Project\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.getPlayerData">
+  <component name="RunManager" selected="Application.GolfLeague">
     <configuration default="false" name="getPlayerData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -187,6 +193,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="group1.getPlayerData" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Golf League Final Project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="GolfLeague" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="group1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="group1.GolfLeague" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -346,12 +372,14 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.getPlayerData" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GolfLeague" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.getPlayerData" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.GolfLeague" />
+        <item index="1" class="java.lang.String" itemvalue="Application.getPlayerData" />
       </list>
     </recent_temporary>
   </component>
@@ -366,6 +394,13 @@
       <option name="number" value="Default" />
       <updated>1443532513979</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added class to connect to local DB, creates player object, adds them to ArrayList, then prints results with a foreach loop">
+      <created>1444237804407</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1444237804407</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -380,7 +415,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5496063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2503937" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13762811" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -407,6 +442,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added class to connect to local DB, creates player object, adds them to ArrayList, then prints results with a foreach loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added class to connect to local DB, creates player object, adds them to ArrayList, then prints results with a foreach loop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -558,14 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_31/src.zip!/java/net/URLClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.8982034">
@@ -580,29 +611,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/group1/Team.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.074074">
-          <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/GolfLeague.java">
+    <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state vertical-scroll-proportion="-18.25926">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/group1/getPlayerData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.875969">
+        <state vertical-scroll-proportion="0.0">
           <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/GolfLeague.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5653207">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
