@@ -81,6 +81,8 @@ public class Player {
 	public void setJoinedTeam(Date date) {
 		this.joinedTeam = date;
 	}
+
+
 	
 	public static Comparator<Player> PlayerRankComparator = new Comparator<Player>() {
 

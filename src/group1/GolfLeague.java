@@ -1,14 +1,6 @@
 package group1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import java.util.Collections;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Comparator;
+import java.util.*;
 
 public class GolfLeague {
 
@@ -30,10 +22,9 @@ public class GolfLeague {
 		//Array of 4 players for a team
 		Player[] players = new Player[4];
 		
-		//Array of 10 teams in league
-		Team[] league = new Team[10];
+		//Stack to hold teams in the league
+		Stack league = new Stack();
 
-		Object[][] topTeams = new Object[10][2];
 		
 		//Creates an arrayList for a team to have 4 players put in
 		List teamMembers = new ArrayList<Player>();
@@ -69,14 +60,16 @@ public class GolfLeague {
 			}
 		
 		Collections.sort(teamMembers, Player.PlayerRankComparator);
-		
+
 		//Iterator used to walk through teamMembers list; displayed using while loop
 		Iterator it = teamMembers.iterator();
 			while (it.hasNext()){
 				System.out.print("\nTeam members sorted by rank: " + it.next());
+
 			}
 
-		for(int index = 0; index < 10; index++){
+		//Loop to add teams to a stack
+		for(int index = 0; index < 5; index++){
 			System.out.println("Enter team name: ");
 			teamName = input.nextLine();
 		
@@ -84,24 +77,16 @@ public class GolfLeague {
 					break;
 				}
 			
-			System.out.println("Enter team score: ");
-			teamScore = input.nextInt();
-			System.out.println("Enter team rank: ");
-			teamRank = input.nextInt();
+			teamScore = 0;
+			teamRank = 0;
 			
-			league[index] = new Team(teamName, teamScore, teamRank);
-
-			topTeams[teamRank - 1][0] = teamName;
-			topTeams[teamRank - 1][1] = teamScore;
-
-		}
-
-		for(int i = 0; i < topTeams.length; i ++){
+			league.push(new Team(teamName, teamScore, teamRank));
 
 
-				System.out.println("Rank: " + (i+1) + " Team: " + topTeams[i][0] + " Score: " + topTeams[i][1]);
 
 		}
+
+		System.out.println("Most recent team added to league: "  +league.peek());
 
 	}
 

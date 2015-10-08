@@ -40,5 +40,11 @@ public class Team {
 	public void setTeamRank(int teamRank) {
 		this.teamRank = teamRank;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Team: " + teamName + "\n" +
+				"Score: " + teamScore + "\n" +
+				"Rank: " + teamRank;
+	}
 }
