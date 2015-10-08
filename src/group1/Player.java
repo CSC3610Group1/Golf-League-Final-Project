@@ -2,11 +2,8 @@
 
 package group1;
 
-<<<<<<< Updated upstream
-=======
 import java.util.Comparator;
 
->>>>>>> Stashed changes
 import java.util.Date;
 
 public class Player {
@@ -26,7 +23,7 @@ public class Player {
 	}
 	
 	//Constructor with parameters
-	Player(String fname, String lname, int score, int rank, int hcap, int times, int average, Date joinedTeam){
+	Player(String fname, String lname, int score, int rank, int hcap, int times, int average){
 		firstName = fname;
 		lastName = lname;
 		playerScore = score;
@@ -34,7 +31,6 @@ public class Player {
 		handicap = hcap;
 		timesPlayed = times;
 		playerAverage = average;
-		this.joinedTeam = joinedTeam;
 	}
 	
 	public String getFirstName() {

@@ -2,17 +2,15 @@ package group1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-<<<<<<< Updated upstream
-=======
+
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.Iterator;
->>>>>>> Stashed changes
 import java.util.List;
 import java.util.Scanner;
 import java.util.Comparator;
 
-public class GolfLeague extends getPlayerData {
+public class GolfLeague {
 
 	public static void main(String[] args) {
 		
@@ -57,10 +55,18 @@ public class GolfLeague extends getPlayerData {
 			System.out.println("Enter player's average: ");
 			playerAverage = input.nextDouble();
 			
-			//players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage, joinedTeam);
+			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage, date);
 		}
 		
 		teamMembers.add(Arrays.asList(players));
+		
+		Collections.sort(teamMembers, Player.PlayerRankComparator);
+		
+		//Iterator used to walk through teamMembers list; displayed using while loop
+		Iterator iterator = teamMembers.iterator();
+			while (iterator.hasNext()){
+				System.out.print("\nTeam members sorted by rank: " + iterator.next());
+			}
 		
 		Collections.sort(teamMembers, Player.PlayerRankComparator);
 		
