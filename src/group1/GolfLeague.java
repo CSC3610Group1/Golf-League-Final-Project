@@ -23,8 +23,7 @@ public class GolfLeague {
 		//Array of 4 players for a team
 		Player[] players = new Player[4];
 		
-		//Array of 10 teams in league
-		Team[] league = new Team[10];
+
 
 		Object[][] topTeams = new Object[10][2];
 		
@@ -54,10 +53,10 @@ public class GolfLeague {
 		}
 		
 		teamMembers.add(Arrays.asList(players));
-
-		for(int index = 0; index < 10; index++){
+		Stack league = new Stack();
+		for(int index = 0; index < 3; index++){
 			System.out.println("Enter team name: ");
-			teamName = input.nextLine();
+			teamName = input.next();
 		
 				if(teamName == "quit"){
 					break;
@@ -68,19 +67,11 @@ public class GolfLeague {
 			System.out.println("Enter team rank: ");
 			teamRank = input.nextInt();
 			
-			league[index] = new Team(teamName, teamScore, teamRank);
+			league.push( new Team(teamName, teamScore, teamRank));
 
-			topTeams[teamRank - 1][0] = teamName;
-			topTeams[teamRank - 1][1] = teamScore;
 
 		}
-
-		for(int i = 0; i < topTeams.length; i ++){
-
-
-				System.out.println("Rank: " + (i+1) + " Team: " + topTeams[i][0] + " Score: " + topTeams[i][1]);
-
-		}
+		System.out.println("Most recent team added to league: " + league.peek());
 	}
 
 }
