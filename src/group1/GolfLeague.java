@@ -19,6 +19,8 @@ public class GolfLeague {
 		int teamScore;
 		int teamRank;
 
+		//hashmap for players, uses string for keys and player object for values
+		HashMap<String, Player> playersMap = new HashMap();
 		//Array of 4 players for a team
 		Player[] players = new Player[4];
 		
@@ -45,10 +47,15 @@ public class GolfLeague {
 			timesPlayed = input.nextInt();
 			System.out.println("Enter player's average: ");
 			playerAverage = input.nextInt();
-			
+
 			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
+			playersMap.put(lastName, new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage));
 		}
-		
+
+		//Foreach loop to push player object data to the local DB
+		for(Object player: playersMap.values()){
+			getPlayerData.pushData((Player) player);
+		}
 		teamMembers.add(Arrays.asList(players));
 		
 		Collections.sort(teamMembers, Player.PlayerRankComparator);
