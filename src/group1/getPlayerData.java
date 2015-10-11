@@ -1,5 +1,7 @@
 package group1;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +19,7 @@ public class getPlayerData {
         static final String USER = "root";
         static final String PASS = "";
 
-        public static void main(String[] args) {
+        public static ArrayList<Player> getPlayers() {
             ArrayList<Player> playerList = new ArrayList<>();
             Player player;
             Connection conn = null;
@@ -27,11 +29,9 @@ public class getPlayerData {
                 Class.forName("com.mysql.jdbc.Driver");
 
                 //STEP 3: Open a connection
-                System.out.println("Connecting to database...");
                 conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
                 //STEP 4: Execute a query
-                System.out.println("Creating statement...");
                 stmt = conn.createStatement();
                 String sql;
                 sql = "SELECT first_name, last_name, handicap, score, rank, times_played, average FROM players";
@@ -56,9 +56,7 @@ public class getPlayerData {
 
                 }
 
-                for(Player p: playerList){
-                    System.out.println("Player name: " + p.getFirstName() + " " + " " + p.getLastName() + "\nHandicap: " + p.getHandicap());
-                }
+
                 //STEP 6: Clean-up environment
                 rs.close();
                 stmt.close();
@@ -85,14 +83,21 @@ public class getPlayerData {
                     se.printStackTrace();
                 }//end finally try
             }//end try
-            System.out.println("Goodbye!");
 
+
+            return playerList;
         }
 
-    public static void pushData(Player player){
+    public static void pushData(Player player) throws SQLException{
         Connection conn = null;
         Statement stmt = null;
-
+        String firstName =  player.getFirstName();
+        String lastName = player.getLastName();
+        int handicap = player.getHandicap();
+        int score = player.getPlayerScore();
+        int rank = player.getPlayerRank();
+        int timesPlayed = player.getTimesPlayed();
+        double average = player.getPlayerAverage();
         try{
             //STEP 2: Register JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
@@ -104,19 +109,21 @@ public class getPlayerData {
             stmt = conn.createStatement();
 
             String sql = "INSERT INTO players " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                    "(first_name, last_name, handicap, score, rank, times_played, average) " +
+                    "VALUES(?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, player.getFirstName());
-            preparedStatement.setString(2, player.getLastName());
-            preparedStatement.setInt(3, player.getHandicap());
-            preparedStatement.setInt(4, player.getPlayerScore());
-            preparedStatement.setInt(5, player.getPlayerRank());
-            preparedStatement.setInt(6, player.getTimesPlayed());
-            preparedStatement.setDouble(7, player.getPlayerAverage());
-// execute insert SQL stetement
-            preparedStatement .executeUpdate();
+            preparedStatement.setString(1, firstName);
+            preparedStatement.setString(2, lastName);
+            preparedStatement.setInt(3,handicap);
+            preparedStatement.setInt(4,score);
+            preparedStatement.setInt(5, rank);
+            preparedStatement.setInt(6, timesPlayed);
+            preparedStatement.setDouble(7, average);
 
-            stmt.executeUpdate(sql);
+// execute insert SQL stetement
+            preparedStatement.executeUpdate();
+
+
 
 
         }catch(SQLException se){

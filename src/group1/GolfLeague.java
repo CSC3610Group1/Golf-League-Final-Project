@@ -1,5 +1,6 @@
 package group1;
 
+import java.sql.SQLException;
 import java.util.*;
 
 public class GolfLeague {
@@ -49,15 +50,27 @@ public class GolfLeague {
 			playerAverage = input.nextInt();
 
 			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
+			//Add players to map
 			playersMap.put(lastName, new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage));
 		}
 
 		//Foreach loop to push player object data to the local DB
 		for(Object player: playersMap.values()){
-			getPlayerData.pushData((Player) player);
+			try {
+				getPlayerData.pushData((Player) player);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		ArrayList<Player> playersFromDB = getPlayerData.getPlayers();
+
+		for(Player p: playersFromDB){
+			System.out.println("Player name: " + p.getFirstName() + " " + " " + p.getLastName() + "\nHandicap: " + p.getHandicap());
+
 		}
 		teamMembers.add(Arrays.asList(players));
-		
+
+
 		Collections.sort(teamMembers, Player.PlayerRankComparator);
 		
 		//Iterator used to walk through teamMembers list; displayed using while loop
