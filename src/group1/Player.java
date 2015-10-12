@@ -1,6 +1,6 @@
-/**This class defines the player object, including a player's name, score, rank, and handicap
- * Uses internal builder class to create object
-**/
+/**
+ * This class defines the player object, including a player's name, score, rank, and handicap
+ **/
 
 package group1;
 
@@ -11,29 +11,35 @@ import java.util.Date;
 
 public class Player {
 
-    private String firstName;
-    private String lastName;
-    private int playerScore;
-    private int playerRank;
-    private int handicap;
-    private int timesPlayed;
-    private int playerAverage;
-    private Date joinedTeam;
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss z");
+    private final String firstName; //contains only letters
+    private final String lastName; //contains only letter
+    private final int playerScore; //contains positive integer
+    private final int playerRank; //contains number between 1-4
+    //compares rank of two players
+    public static Comparator<Player> playerRankComparator = (p1, p2) -> {
+        int playerRank1 = p1.getPlayerRank();
+        int playerRank2 = p2.getPlayerRank();
+
+        return playerRank1 - playerRank2;
+    };
+    private final int handicap; //contains positive integer
+    private final int timesPlayed;//contains positive integer
+    /*should probably change to double*/
+    private final int playerAverage;//contains positive integer
+    private final Date joinedTeam;
+    private final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss z");
 
     //Constructor with parameters
-    private Player(final String firstName, final String lastName, final int playerScore
-            , final int playerRank, final int handicap, final int timesPlayed, final int playerAverage) {
+    public Player(String firstName, String lastName, int playerScore, int playerRank,
+                  int handicap, int timesPlayed, int playerAverage) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.playerScore = playerScore;
         this.playerRank = playerRank;
         this.handicap = handicap;
         this.timesPlayed = timesPlayed;
-        this.playerAverage = playerAverage;
+        this.playerAverage = playerScore/timesPlayed;
         joinedTeam = Calendar.getInstance().getTime();
-
-
     }
 
     public String getFirstName() {
@@ -68,15 +74,6 @@ public class Player {
         return joinedTeam;
     }
 
-    //compares rank of two players
-    public static Comparator<Player> PlayerRankComparator = new Comparator<Player>() {
-        public int compare(Player p1, Player p2) {
-            int playerRank1 = p1.getPlayerRank();
-            int playerRank2 = p2.getPlayerRank();
-
-            return playerRank1 - playerRank2;
-        }
-    };
     @Override
     public String toString() {
         return "Player{" +
@@ -89,57 +86,5 @@ public class Player {
                 ", playerAverage=" + playerAverage +
                 ", joinedTeam=" + simpleDateFormat.format(joinedTeam) +
                 '}';
-    }
-
-    //builds a player object
-    public static final class PlayerBuilder {
-        private String firstName;
-        private String lastName;
-        private int playerScore;
-        private int playerRank;
-        private int handicap;
-        private int timesPlayed;
-        private int playerAverage;
-
-        public PlayerBuilder withFirstName(final String firstName) {
-            this.firstName = firstName;
-            return this;
-
-        }
-
-        public PlayerBuilder withLastName(final String lastName) {
-            this.lastName = lastName;
-            return this;
-        }
-
-        public PlayerBuilder withPlayerScore(final int playerScore) {
-            this.playerScore = playerScore;
-            return this;
-        }
-
-        public PlayerBuilder withPlayerRank(final int playerRank) {
-            this.playerRank = playerRank;
-            return this;
-        }
-
-        public PlayerBuilder withHandicap(final int handicap) {
-            this.handicap = handicap;
-            return this;
-        }
-
-        public PlayerBuilder withTimesPlayed(final int timesPlayed) {
-            this.timesPlayed = timesPlayed;
-            return this;
-        }
-
-        public PlayerBuilder withPlayerAverage(final int playerAverage) {
-            this.playerAverage = playerAverage;
-            return this;
-        }
-
-        public Player buildPlayer() {
-            return new Player(firstName, lastName, playerScore, playerRank, handicap,
-                    timesPlayed, playerAverage);
-        }
     }
 }

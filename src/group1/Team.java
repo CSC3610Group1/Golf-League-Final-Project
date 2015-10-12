@@ -4,85 +4,34 @@ package group1;
 
 import java.util.ArrayList;
 
-
 public class Team {
-	
-	private String teamName;
-	private int teamScore;
-	private int teamRank;
-	
-	//Default constructor
-	Team(){
-		
-	}
-	
+	private final String teamName;
+	private final int teamScore;
+	private final int teamRank;//positive int
+
 	//Constructor with parameters
-	Team(String name, int score, int rank){
-		teamName = name;
-		teamScore = score;
-		teamRank = rank;
+	public Team(String name, int score, int rank){
+		this.teamName = name;
+		this.teamScore = score;
+		this.teamRank = rank;
 	}
 
-	private Team(Builder builder) {
-		teamName = builder.teamName;
-		teamScore = builder.teamScore;
-		teamRank = builder.teamRank;
-	}
+    public String getTeamName() {
+        return teamName;
+    }
 
-	/*
-	public String getTeamName() {
-		return teamName;
-	}
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-	public int getTeamScore() {
-		return teamScore;
-	}
-	public void setTeamScore(int teamScore) {
-		this.teamScore = teamScore;
-	}
-	public int getTeamRank() {
-		return teamRank;
-	}
-	public void setTeamRank(int teamRank) {
-		this.teamRank = teamRank;
-	}*/
+    public int getTeamScore() {
+        return teamScore;
+    }
 
+    public int getTeamRank() {
+        return teamRank;
+    }
 
-
-	@Override
+    @Override
 	public String toString() {
 		return "Team: " + teamName + "\n" +
 				"Score: " + teamScore + "\n" +
 				"Rank: " + teamRank;
-	}
-
-	public static final class Builder {
-		private String teamName;
-		private int teamScore;
-		private int teamRank;
-
-		public Builder() {
-		}
-
-		public Builder withTeamName(String val) {
-			teamName = val;
-			return this;
-		}
-
-		public Builder withTeamScore(int val) {
-			teamScore = val;
-			return this;
-		}
-
-		public Builder withTeamRank(int val) {
-			teamRank = val;
-			return this;
-		}
-
-		public Team build() {
-			return new Team(this);
-		}
 	}
 }

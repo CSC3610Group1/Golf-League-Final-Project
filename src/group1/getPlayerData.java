@@ -6,9 +6,6 @@ import java.util.ArrayList;
  * Created by Rob on 10/7/2015.
  */
 public class getPlayerData {
-
-
-
         // JDBC driver name and database URL
         static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
         static final String DB_URL = "jdbc:mysql://localhost/golf_final";
@@ -51,11 +48,8 @@ public class getPlayerData {
 
 
                     //Create player object and add to player list
-                    player = new Player.PlayerBuilder().withFirstName(fName).withLastName(lName)
-                            .withHandicap(handicap).withPlayerScore(score).withPlayerRank(rank)
-                            .withTimesPlayed(timesPlayed).withPlayerAverage(average).buildPlayer();
+                    player = new Player(fName, lName, handicap, score, rank, timesPlayed, average);
                     playerList.add(player);
-
                 }
 
                 for(Player p: playerList){
