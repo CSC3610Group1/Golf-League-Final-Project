@@ -1,6 +1,7 @@
-/**This class defines the player object, including a player's name, score, rank, and handicap
+/**
+ * This class defines the player object, including a player's name, score, rank, and handicap
  * Uses internal builder class to create object
-**/
+ **/
 
 package group1;
 
@@ -11,13 +12,14 @@ import java.util.Date;
 
 public class Player {
 
-    private String firstName;
-    private String lastName;
-    private int playerScore;
-    private int playerRank;
-    private int handicap;
-    private int timesPlayed;
-    private int playerAverage;
+    private String firstName; //contains only letters
+    private String lastName; //contains only letter
+    private int playerScore; //contains positive integer
+    private int playerRank; //contains number between 1-4
+    private int handicap; //contains positive integer
+    private int timesPlayed;//contains positive integer
+    /**should probably change to double**/
+    private int playerAverage;//contains positive integer
     private Date joinedTeam;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss z");
 
@@ -77,6 +79,7 @@ public class Player {
             return playerRank1 - playerRank2;
         }
     };
+
     @Override
     public String toString() {
         return "Player{" +
