@@ -51,7 +51,9 @@ public class getPlayerData {
 
 
                     //Create player object and add to player list
-                    player = new Player(fName, lName, score, rank, handicap, timesPlayed, average);
+                    player = new Player.PlayerBuilder().withFirstName(fName).withLastName(lName)
+                            .withHandicap(handicap).withPlayerScore(score).withPlayerRank(rank)
+                            .withTimesPlayed(timesPlayed).withPlayerAverage(average).buildPlayer();
                     playerList.add(player);
 
                 }

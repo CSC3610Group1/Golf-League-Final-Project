@@ -19,6 +19,14 @@ public class GolfLeague {
 		int teamScore;
 		int teamRank;
 
+
+
+		//test player
+		 Player player1 = new Player.PlayerBuilder().withFirstName("John").withLastName("Doe")
+				.withPlayerScore(1).withPlayerRank(1).withHandicap(-1).withTimesPlayed(5)
+				.withPlayerAverage(3).buildPlayer();
+		System.out.println(player1.toString());
+
 		//Array of 4 players for a team
 		Player[] players = new Player[4];
 		
@@ -46,7 +54,7 @@ public class GolfLeague {
 			System.out.println("Enter player's average: ");
 			playerAverage = input.nextInt();
 			
-			players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
+		//	players[index] = new Player(firstName, lastName, playerScore, playerRank, handicap, timesPlayed, playerAverage);
 		}
 		
 		teamMembers.add(Arrays.asList(players));
