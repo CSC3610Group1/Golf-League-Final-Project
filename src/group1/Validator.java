@@ -4,14 +4,16 @@ package group1;
  * Class CSC3610
  * Programmer: T.J. Stankus
  * Date: 10/12/2015
- * Purpose:
+ * Purpose: Validates Player and Team objects and returns a PlayerValidationFlags
+ * or TeamValidationFlags object with the errors that occurred
  */
 public final class Validator {
 
     private Validator() {
     }
 
-    static PlayerValidationFlags validatePlayer(Player player) {
+    //validates player object and then returns a PlayerValidationFlags object with all errors
+    public static PlayerValidationFlags validatePlayer(Player player) {
         boolean validFirstName;
         boolean validLastName;
         boolean validPlayerScore;
@@ -42,7 +44,7 @@ public final class Validator {
                 validPlayerRank, validHandicap, validTimesPlayed);
     }
 
-    static boolean validateTeam(Team team) {
+   public static boolean validateTeam(Team team) {
         return false;
     }
 

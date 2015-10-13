@@ -7,7 +7,7 @@ import java.util.List;
  * Class CSC3610
  * Programmer: T.J. Stankus
  * Date: 10/12/2015
- * Purpose:
+ * Purpose: Creates a PlayerValidationFlags objects than returns an ArrayList with all errors
  */
 public final class PlayerValidationFlags {
     private final boolean validFirstName;
@@ -16,6 +16,7 @@ public final class PlayerValidationFlags {
     private final boolean validPlayerRank;
     private final boolean validHandicap;
     private final boolean validTimesPlayed;
+
 
     public PlayerValidationFlags(boolean validFirstName, boolean validLastName,
                                  boolean validPlayerScore, boolean validPlayerRank,
@@ -53,6 +54,7 @@ public final class PlayerValidationFlags {
         return validTimesPlayed;
     }
 
+    //adds all errors to an ArrayList
     public List<String> getAllInvalid() {
         List<String> invalidVars = new ArrayList<>();
         if (!validFirstName) {
