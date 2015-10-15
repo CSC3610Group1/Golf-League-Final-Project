@@ -7,13 +7,12 @@ import java.util.ArrayList;
 public class Team {
 	private final String teamName;
 	private final int teamScore;
-	private final int teamRank;//positive int
+
 
 	//Constructor with parameters
-	public Team(String name, int score, int rank){
+	public Team(String name, int score){
 		this.teamName = name;
 		this.teamScore = score;
-		this.teamRank = rank;
 	}
 
     public String getTeamName() {
@@ -24,14 +23,11 @@ public class Team {
         return teamScore;
     }
 
-    public int getTeamRank() {
-        return teamRank;
-    }
+
 
     @Override
 	public String toString() {
 		return "Team: " + teamName + "\n" +
-				"Score: " + teamScore + "\n" +
-				"Rank: " + teamRank;
+				"Score: " + teamScore + "\n";
 	}
 }
