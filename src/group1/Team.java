@@ -2,24 +2,28 @@
 
 package group1;
 
-import java.util.ArrayList;
-
-public class Team {
+import java.util.Comparator;
+import java.util.List;
+public class Team implements Comparable<Team>{
 	
 	private String teamName;
 	private int teamScore;
-	private int teamRank;
-	
+
+    private final static Comparator<Team> teamRankComparator =
+            (t1, t2) -> Integer.compare(t1.getTeamScore(), t2.getTeamScore());
+
+    private final static Comparator<Team> teamNameComparator =
+            (t1, t2) -> t1.getTeamName().compareTo(t2.getTeamName());
+
 	//Default constructor
-	Team(){
+        Team(){
 		
 	}
 	
 	//Constructor with parameters
-	Team(String name, int score, int rank){
+	Team(String name, int score){
 		teamName = name;
 		teamScore = score;
-		teamRank = rank;
 	}
 	
 	public String getTeamName() {
@@ -34,17 +38,31 @@ public class Team {
 	public void setTeamScore(int teamScore) {
 		this.teamScore = teamScore;
 	}
-	public int getTeamRank() {
-		return teamRank;
-	}
-	public void setTeamRank(int teamRank) {
-		this.teamRank = teamRank;
-	}
 
 	@Override
 	public String toString() {
-		return "Team: " + teamName + "\n" +
-				"Score: " + teamScore + "\n" +
-				"Rank: " + teamRank;
+		return "Team: " + teamName + " | " +
+				"Score: " + teamScore + "\n";
 	}
+
+	@Override
+	public int compareTo(Team o) {
+        if (this.teamScore > o.getTeamScore())
+            return 1;
+        if (this.teamScore < o.getTeamScore())
+            return -1;
+        if (this.teamScore == o.getTeamScore())
+            return 0;
+		return 0;
+	}
+
+    public static List<Team> sortByScore(List<Team> teams) {
+        return Mergesort.mergeSort(teams, teamRankComparator);
+    }
+
+   public static List<Team> sortByName(List<Team> teams) {
+        return Mergesort.mergeSort(teams, teamNameComparator);
+    }
+
+
 }
