@@ -65,6 +65,7 @@ public class getPlayerData {
 
         } catch (SQLException se) {
             //Handle errors for JDBC
+            ExceptionHandler.sqlException();
             se.printStackTrace();
         } catch (Exception e) {
             //Handle errors for Class.forName
@@ -128,6 +129,7 @@ public class getPlayerData {
 
         }catch(SQLException se){
             //Handle errors for JDBC
+            ExceptionHandler.sqlException();
             se.printStackTrace();
         }catch(Exception e){
             //Handle errors for Class.forName

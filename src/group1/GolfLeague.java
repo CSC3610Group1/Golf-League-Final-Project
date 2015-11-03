@@ -1,7 +1,10 @@
 package group1;
 
+import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static group1.getTeamData.pushTeamData;
 
 public class GolfLeague {
 
@@ -33,8 +36,8 @@ public class GolfLeague {
         //Array of 4 players for a team
         Player[] players = new Player[4];
 
-        //Stack to hold teams in the league
-        Stack<Team> league = new Stack<>();
+        //ArrayList to hold teams in the league
+        ArrayList<Team> league = new ArrayList<>();
 
         //Creates an arrayList for a team to have 4 players put in
         List<Player> teamMembers = new ArrayList<>();
@@ -80,19 +83,23 @@ public class GolfLeague {
         for (int index = 0; index < 5; index++) {
             System.out.println("Enter team name: ");
             teamName = input.nextLine();
+            System.out.println("Enter team score: ");
+            teamScore = input.nextInt();
 
             if (teamName.equals("quit")) {
                 break;
             }
 
-            teamScore = 0;
-            teamRank = 0;
 
-            league.push(new Team(teamName, teamScore, teamRank));
+            try {
+                pushTeamData(new Team(teamName, teamScore));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            league.add(new Team(teamName, teamScore));
 
         }
 
-        System.out.println("Most recent team added to league: " + league.peek());
 
     }
 

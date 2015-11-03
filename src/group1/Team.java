@@ -2,11 +2,19 @@
 
 package group1;
 
-import java.util.ArrayList;
+
+import java.util.Comparator;
 
 public class Team {
 	private final String teamName;
 	private final int teamScore;
+
+	public static Comparator<Team> teamScoreComparator = (p1, p2) -> {
+		int teamRank1 = p1.getTeamScore();
+		int teamRank2 = p2.getTeamScore();
+
+		return teamRank1 - teamRank2;
+	};
 
 
 	//Constructor with parameters

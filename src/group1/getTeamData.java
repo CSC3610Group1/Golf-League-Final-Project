@@ -1,5 +1,6 @@
 package group1;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -59,6 +60,7 @@ public class getTeamData {
 
         } catch (SQLException se) {
             //Handle errors for JDBC
+            ExceptionHandler.sqlException();
             se.printStackTrace();
         } catch (Exception e) {
             //Handle errors for Class.forName
@@ -75,6 +77,7 @@ public class getTeamData {
                     conn.close();
             } catch (SQLException se) {
                 se.printStackTrace();
+                ExceptionHandler.sqlException();
             }//end finally try
         }//end try
 
@@ -110,6 +113,7 @@ public class getTeamData {
 
         } catch (SQLException se) {
             //Handle errors for JDBC
+            ExceptionHandler.sqlException();
             se.printStackTrace();
         } catch (Exception e) {
             //Handle errors for Class.forName
@@ -126,6 +130,7 @@ public class getTeamData {
                     conn.close();
             } catch (SQLException se) {
                 se.printStackTrace();
+                ExceptionHandler.sqlException();
             }//end finally try
         }//end try
     }
