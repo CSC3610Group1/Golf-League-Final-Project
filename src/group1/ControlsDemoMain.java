@@ -33,7 +33,7 @@ public class ControlsDemoMain extends Application {
 	private void showControlData() {
 		// load
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(ControlsDemoMain.class.getResource("welcome.fxml"));
+		loader.setLocation(ControlsDemoMain.class.getResource("fxml/welcome.fxml"));
 		try{
 			controlsData = (AnchorPane) loader.load();
 		}catch(IOException e){
@@ -49,7 +49,7 @@ public class ControlsDemoMain extends Application {
 	private void initializeRootlLayout() {
 		//load root layout form fxml file
 		FXMLLoader csc2650loader = new FXMLLoader();
-		csc2650loader.setLocation(ControlsDemoMain.class.getResource("RootLayout.fxml"));
+		csc2650loader.setLocation(ControlsDemoMain.class.getResource("fxml/RootLayout.fxml"));
 		try{
 			rootlayout = (BorderPane) csc2650loader.load();
 		}catch(IOException e){
