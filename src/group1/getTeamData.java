@@ -1,14 +1,13 @@
 package group1;
+
+import javax.swing.*;
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 
 /**
- * Created by Rob on 10/7/2015.
+ * Created by rnice01 on 10/15/2015.
  */
-public class getPlayerData {
-
+public class getTeamData {
 
 
     // JDBC driver name and database URL
@@ -19,9 +18,9 @@ public class getPlayerData {
     static final String USER = "root";
     static final String PASS = "";
 
-    public static ArrayList<Player> getPlayers() {
-        ArrayList<Player> playerList = new ArrayList<>();
-        Player player;
+    public static ArrayList<Team> getTeams() {
+        ArrayList<Team> teamList = new ArrayList<>();
+        Team team;
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -34,25 +33,21 @@ public class getPlayerData {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT first_name, last_name, handicap, score, rank, times_played, average FROM players";
+            sql = "SELECT team_name, team_score FROM  teams";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
             while (rs.next()) {
                 //Retrieve by column name
-                String fName = rs.getString("first_name");
-                String lName = rs.getString("last_name");
-                int handicap = rs.getInt("handicap");
-                int score = rs.getInt("score");
-                int rank = rs.getInt("rank");
-                int timesPlayed = rs.getInt("times_played");
-                int average = rs.getInt("average");
+                String name = rs.getString("team_name");
+                int score = rs.getInt("team_score");
+
 
 
 
                 //Create player object and add to player list
-                player = new Player(fName, lName, score, rank, handicap, timesPlayed, average);
-                playerList.add(player);
+                team = new Team(name, score);
+                teamList.add(team);
 
             }
 
@@ -82,24 +77,19 @@ public class getPlayerData {
                     conn.close();
             } catch (SQLException se) {
                 se.printStackTrace();
+                ExceptionHandler.sqlException();
             }//end finally try
         }//end try
 
 
-        return playerList;
+        return teamList;
     }
 
-    public static void pushPlayerData(Player player) throws SQLException{
+    public static void pushTeamData(Team team) throws SQLException {
         Connection conn = null;
         Statement stmt = null;
-        String firstName =  player.getFirstName();
-        String lastName = player.getLastName();
-        int handicap = player.getHandicap();
-        int score = player.getPlayerScore();
-        int rank = player.getPlayerRank();
-        int timesPlayed = player.getTimesPlayed();
-        double average = player.getPlayerAverage();
-        try{
+
+        try {
             //STEP 2: Register JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -109,46 +99,39 @@ public class getPlayerData {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "INSERT INTO players " +
-                    "(first_name, last_name, handicap, score, rank, times_played, average) " +
-                    "VALUES(?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO teams " +
+                    "(team_name, team_score) " +
+                    "VALUES(?, ?)";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, firstName);
-            preparedStatement.setString(2, lastName);
-            preparedStatement.setInt(3,handicap);
-            preparedStatement.setInt(4,score);
-            preparedStatement.setInt(5, rank);
-            preparedStatement.setInt(6, timesPlayed);
-            preparedStatement.setDouble(7, average);
+            preparedStatement.setString(1, team.getTeamName());
+            preparedStatement.setInt(2, team.getTeamScore());
+
 
 // execute insert SQL stetement
             preparedStatement.executeUpdate();
 
 
-
-
-        }catch(SQLException se){
+        } catch (SQLException se) {
             //Handle errors for JDBC
             ExceptionHandler.sqlException();
             se.printStackTrace();
-        }catch(Exception e){
+        } catch (Exception e) {
             //Handle errors for Class.forName
             e.printStackTrace();
-        }finally{
+        } finally {
             //finally block used to close resources
-            try{
-                if(stmt!=null)
+            try {
+                if (stmt != null)
                     conn.close();
-            }catch(SQLException se){
+            } catch (SQLException se) {
             }// do nothing
-            try{
-                if(conn!=null)
+            try {
+                if (conn != null)
                     conn.close();
-            }catch(SQLException se){
+            } catch (SQLException se) {
                 se.printStackTrace();
+                ExceptionHandler.sqlException();
             }//end finally try
         }//end try
     }
-
-}//end FirstExample
-
+}

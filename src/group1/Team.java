@@ -2,48 +2,40 @@
 
 package group1;
 
-import java.util.ArrayList;
+
+import java.util.Comparator;
 
 public class Team {
-	
-	private String teamName;
-	private int teamScore;
-	private int teamRank;
-	
-	//Default constructor
-	Team(){
-		
-	}
-	
+	private final String teamName;
+	private final int teamScore;
+
+	public static Comparator<Team> teamScoreComparator = (p1, p2) -> {
+		int teamRank1 = p1.getTeamScore();
+		int teamRank2 = p2.getTeamScore();
+
+		return teamRank1 - teamRank2;
+	};
+
+
 	//Constructor with parameters
-	Team(String name, int score, int rank){
-		teamName = name;
-		teamScore = score;
-		teamRank = rank;
-	}
-	
-	public String getTeamName() {
-		return teamName;
-	}
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-	public int getTeamScore() {
-		return teamScore;
-	}
-	public void setTeamScore(int teamScore) {
-		this.teamScore = teamScore;
-	}
-	public int getTeamRank() {
-		return teamRank;
-	}
-	public void setTeamRank(int teamRank) {
-		this.teamRank = teamRank;
+	public Team(String name, int score){
+		this.teamName = name;
+		this.teamScore = score;
 	}
 
-	@Override
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public int getTeamScore() {
+        return teamScore;
+    }
+
+
+
+    @Override
 	public String toString() {
 		return "Team: " + teamName + "\n" +
-				"Rank: " + teamRank;
+				"Score: " + teamScore + "\n";
 	}
 }
