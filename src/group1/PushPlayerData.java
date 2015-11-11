@@ -1,14 +1,12 @@
 package group1;
 
-import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
 /**
- * Created by rnice01 on 10/15/2015.
+ * Created by rnice01 on 11/11/2015.
  */
-public class getTeamData {
-
+public class PushPlayerData {
 
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -85,7 +83,7 @@ public class getTeamData {
         return teamList;
     }
 
-    public static boolean pushTeamData(Team team) throws SQLException {
+    public static boolean pushPlayerData(ArrayList<Player> player) throws SQLException {
         Connection conn = null;
         Statement stmt = null;
 
@@ -104,8 +102,8 @@ public class getTeamData {
                     "VALUES(?, ?)";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
 
-            preparedStatement.setString(1, team.getTeamName());
-           preparedStatement.setInt(2, team.getTeamScore());
+            //preparedStatement.setString(1, team.getTeamName());
+            //preparedStatement.setInt(2, team.getTeamScore());
 
 
 // execute insert SQL stetement
