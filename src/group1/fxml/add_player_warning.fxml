@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.PlayerWarningController">
+   <children>
+      <Label layoutX="54.0" layoutY="29.0" prefHeight="33.0" prefWidth="99.0" text="Warning!">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnOk" layoutX="242.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="42.0" text="Ok" />
+      <Button fx:id="btnCancel" layoutX="332.0" layoutY="170.0" mnemonicParsing="false" text="Cancel" />
+      <Label alignment="CENTER" layoutX="122.0" layoutY="62.0" prefHeight="97.0" prefWidth="281.0" text="Not enough players have been added to your team. If you cancel your team will not be created." textAlignment="CENTER" wrapText="true" />
+   </children>
+</Pane>

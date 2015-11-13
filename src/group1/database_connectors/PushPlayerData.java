@@ -1,14 +1,16 @@
-package group1;
+package group1.database_connectors;
 
-import javax.swing.*;
+import group1.ExceptionHandler;
+import group1.Player;
+import group1.Team;
+
 import java.sql.*;
 import java.util.ArrayList;
 
 /**
- * Created by rnice01 on 10/15/2015.
+ * Created by rnice01 on 11/11/2015.
  */
-public class getTeamData {
-
+public class PushPlayerData {
 
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -84,8 +86,9 @@ public class getTeamData {
 
         return teamList;
     }
-
-    public static boolean pushTeamData(Team team) throws SQLException {
+    //Get the arraylist of players and push the first name, last name, and handicap to the database
+    //The other fields are defaulted to 0 since these will be new players to the team
+    public static boolean pushPlayerData(ArrayList<Player> player) throws SQLException {
         Connection conn = null;
         Statement stmt = null;
 
@@ -98,18 +101,20 @@ public class getTeamData {
 
             //STEP 4: Execute a query
             stmt = conn.createStatement();
+            for(Player p: player) {
+                String sql = "INSERT INTO players " +
+                        "(player_first_name, player_last_name, player_handicap, player_score, player_average, times_played) " +
+                        "VALUES(?, ?, ?, 0, 0, 0)";
+                PreparedStatement preparedStatement = conn.prepareStatement(sql);
 
-            String sql = "INSERT INTO teams " +
-                    "(team_name, team_score) " +
-                    "VALUES(?, ?)";
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-
-            preparedStatement.setString(1, team.getTeamName());
-           preparedStatement.setInt(2, team.getTeamScore());
+                preparedStatement.setString(1,p.getFirstName() );
+                preparedStatement.setString(2, p.getLastName());
+                preparedStatement.setInt(3, p.getHandicap());
 
 
-// execute insert SQL stetement
-            preparedStatement.executeUpdate();
+                // execute insert SQL stetement
+                preparedStatement.executeUpdate();
+            }
             return true;
 
         } catch (SQLException se) {

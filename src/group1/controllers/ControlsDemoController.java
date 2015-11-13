@@ -1,4 +1,4 @@
-package group1;
+package group1.controllers;
 
 import java.io.IOException;
 
