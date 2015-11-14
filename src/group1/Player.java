@@ -38,7 +38,7 @@ public class Player {
         this.playerRank = playerRank;
         this.handicap = handicap;
         this.timesPlayed = timesPlayed;
-        this.playerAverage = playerScore/timesPlayed;
+        this.playerAverage = getPlayerAverage();
         joinedTeam = Calendar.getInstance().getTime();
     }
 
@@ -67,7 +67,14 @@ public class Player {
     }
 
     public int getPlayerAverage() {
-        return playerAverage;
+
+        if(timesPlayed == 0) {
+            return 0;
+        }
+        else if(timesPlayed >= 1){
+            return playerScore/timesPlayed;
+        }
+        return 0;
     }
 
     public Date getJoinedTeam() {

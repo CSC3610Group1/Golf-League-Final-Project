@@ -1,11 +1,10 @@
-package group1;
+package group1.controllers;
 
 import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -33,7 +32,7 @@ public class ControlsDemoMain extends Application {
 	private void showControlData() {
 		// load
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(ControlsDemoMain.class.getResource("fxml/welcome.fxml"));
+		loader.setLocation(ControlsDemoMain.class.getResource("../fxml/welcome.fxml"));
 		try{
 			controlsData = (AnchorPane) loader.load();
 		}catch(IOException e){
@@ -49,7 +48,7 @@ public class ControlsDemoMain extends Application {
 	private void initializeRootlLayout() {
 		//load root layout form fxml file
 		FXMLLoader csc2650loader = new FXMLLoader();
-		csc2650loader.setLocation(ControlsDemoMain.class.getResource("fxml/RootLayout.fxml"));
+		csc2650loader.setLocation(ControlsDemoMain.class.getResource("../fxml/RootLayout.fxml"));
 		try{
 			rootlayout = (BorderPane) csc2650loader.load();
 		}catch(IOException e){

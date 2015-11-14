@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static group1.getTeamData.pushTeamData;
+import static group1.database_connectors.getTeamData.pushTeamData;
 
 public class GolfLeague {
 
