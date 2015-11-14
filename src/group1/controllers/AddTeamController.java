@@ -2,11 +2,15 @@ package group1.controllers;
 
 import group1.Team;
 import group1.database_connectors.getTeamData;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 import java.net.URL;
@@ -22,7 +26,7 @@ public class AddTeamController implements Initializable{
 @FXML
     Label labelTeamExists;
 @FXML
-Button btnOK;
+Button btnOK, btnCancel;
 @FXML
     TextField EnterTeamTextField;
 getTeamData getTeams;
@@ -61,6 +65,14 @@ getTeamData getTeams;
             }
         });
 
+
+    }
+
+
+    public void closeWindow(ActionEvent actionEvent) {
+        Node source = (Node)  actionEvent.getSource();
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
 

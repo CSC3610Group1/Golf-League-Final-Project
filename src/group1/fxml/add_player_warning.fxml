@@ -13,8 +13,11 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnOk" layoutX="242.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="42.0" text="Ok" />
-      <Button fx:id="btnCancel" layoutX="332.0" layoutY="170.0" mnemonicParsing="false" text="Cancel" />
-      <Label alignment="CENTER" layoutX="122.0" layoutY="62.0" prefHeight="97.0" prefWidth="281.0" text="Not enough players have been added to your team. If you cancel your team will not be created." textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="btnOk" onAction="#abortAddPlayer" layoutX="233.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Confirm" />
+      <Button fx:id="btnCancel" layoutX="332.0" layoutY="170.0" onAction="#closeWindow" mnemonicParsing="false" text="Cancel" />
+      <Label alignment="CENTER" layoutX="122.0" layoutY="62.0" prefHeight="97.0" prefWidth="281.0" text="Not enough players have been added to your team. If you cancel your team will not be created, click confirm to abort team creation or click cancel to add more players." wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
    </children>
 </Pane>
