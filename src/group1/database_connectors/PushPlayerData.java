@@ -142,10 +142,18 @@ public class PushPlayerData {
         return false;
     }
 
-    public boolean UpdatePlayerScore(String value, int score) {
+    public boolean UpdatePlayerScore(String playerName, String teamName, int score) {
         Connection conn = null;
         Statement stmt = null;
 
+            //playerName string needs to be unconcatenated
+            int position = playerName.indexOf(" ") + 1;
+            int end = playerName.length();
+            String firstName = playerName.substring(0, position);
+            String lastName = playerName.substring(position,end);
+            //Get rid of any white spaces
+            firstName.trim();
+            lastName.trim();
         try {
             //STEP 2: Register JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
@@ -155,8 +163,10 @@ public class PushPlayerData {
 
             //STEP 4: Execute a query
             stmt = conn.createStatement();
+            //Update the score and times played
             String sql = "UPDATE players " +
-                    "SET player_score = (player_score + " + score + ") WHERE player";
+                    "SET score = (score + " + score + "), times_played = (times_played + 1) WHERE team_name = '"+
+                    teamName + "' AND first_name = '" + firstName + "' AND last_name = '" + lastName + "'";
             stmt.executeUpdate(sql);
             return true;
 

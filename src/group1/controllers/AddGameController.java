@@ -85,9 +85,12 @@ public class AddGameController implements Initializable {
             labelScoreWarning.setVisible(true);
             labelTeamWarning.setVisible(false);
         }
-        else{
+        else{//If all the fields are filled in correctly, push the data to the database, method returns true if update runs successfully
+
+            //parse the score value into an integer
             int score = Integer.parseInt(fieldScore.getText());
-            if(playerData.UpdatePlayerScore(comboPlayer.getValue(),score )){
+            //
+            if(playerData.UpdatePlayerScore(comboPlayer.getValue(), comboTeam.getValue(),score )){
                 labelUpdateSuccess.setVisible(true);
                 fieldScore.setText(null);
             }
