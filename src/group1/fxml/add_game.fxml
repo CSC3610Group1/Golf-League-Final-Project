@@ -13,7 +13,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboTeam" onAction="#fillTeamCombo" layoutX="226.0" layoutY="132.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboTeam"  layoutX="226.0" layoutY="132.0" prefWidth="150.0" />
       <ComboBox fx:id="comboPlayer" layoutX="226.0" layoutY="200.0" prefWidth="150.0" />
       <TextField fx:id="fieldScore" layoutX="245.0" layoutY="267.0" prefHeight="25.0" prefWidth="111.0" />
       <Label layoutX="149.0" layoutY="136.0" text="Select Team:" />

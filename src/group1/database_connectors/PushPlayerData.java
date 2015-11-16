@@ -141,4 +141,47 @@ public class PushPlayerData {
         }//end try
         return false;
     }
+
+    public boolean UpdatePlayerScore(String value, int score) {
+        Connection conn = null;
+        Statement stmt = null;
+
+        try {
+            //STEP 2: Register JDBC driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            //STEP 3: Open a connection
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
+            String sql = "UPDATE players " +
+                    "SET player_score = (player_score + " + score + ") WHERE player";
+            stmt.executeUpdate(sql);
+            return true;
+
+        } catch (SQLException se) {
+            //Handle errors for JDBC
+            ExceptionHandler.sqlException();
+            se.printStackTrace();
+        } catch (Exception e) {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            //finally block used to close resources
+            try {
+                if (stmt != null)
+                    conn.close();
+            } catch (SQLException se) {
+            }// do nothing
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+                ExceptionHandler.sqlException();
+            }//end finally try
+        }//end try
+        return false;
+    }
 }
