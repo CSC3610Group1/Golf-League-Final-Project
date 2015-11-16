@@ -68,31 +68,31 @@ public class AddGameController implements Initializable {
 
     public void submitScore(ActionEvent actionEvent) {
         PushPlayerData playerData = new PushPlayerData();
-        int score = Integer.parseInt(fieldScore.getText());
+
         //Check that fields are set before updating the player score
-        if(comboTeam.getValue().equals(null)){
+        if(comboTeam.getValue()==null){
             labelPlayerWarning.setVisible(false);
             labelScoreWarning.setVisible(false);
             labelTeamWarning.setVisible(true);
         }
-        else if(comboPlayer.getValue().equals(null)){
+        else if(comboPlayer.getValue() == null){
             labelPlayerWarning.setVisible(true);
             labelScoreWarning.setVisible(false);
             labelTeamWarning.setVisible(false);
         }
-        else if(fieldScore.getText().equals(null)){
+        else if(fieldScore.getText().isEmpty()){
             labelPlayerWarning.setVisible(false);
             labelScoreWarning.setVisible(true);
             labelTeamWarning.setVisible(false);
         }
-        else if(playerData.UpdatePlayerScore(comboPlayer.getValue(),score )){
-            labelUpdateSuccess.setVisible(true);
-           fieldScore.setText(null);
-
+        else{
+            int score = Integer.parseInt(fieldScore.getText());
+            if(playerData.UpdatePlayerScore(comboPlayer.getValue(),score )){
+                labelUpdateSuccess.setVisible(true);
+                fieldScore.setText(null);
+            }
         }
 
-
-        comboPlayer.getValue();
     }
 
     public void closeWindow(ActionEvent actionEvent) {
