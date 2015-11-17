@@ -33,7 +33,7 @@ public class AddPlayerController implements Initializable{
 Button btnOK, btnCancel;
 @FXML
     Label labelMaxPlayers;
-Team team;
+static Team team;
     ArrayList<Player> playerList = new ArrayList<>();
     public void addPlayerController(Team team) {
       this.team = team;
@@ -52,49 +52,10 @@ Team team;
 
 
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        btnOK.setOnAction((e)->{
-            if(playerList.size() <= 4) {
-                //Get the data from the fields and create a new player object
-                int handi = Integer.parseInt(HandicapField.getText());
-                Player player = new Player(FirstNameField.getText(), LastNameField.getText(), 0, 0, handi, 0, 0);
-                System.out.println(player.getFirstName() + " " + player.getLastName() + " " + player.getHandicap());
-
-                //Add the new player object to the arraylist for player objects
-                playerList.add(player);
-
-                FirstNameField.setText(null);
-                LastNameField.setText(null);
-                HandicapField.setText(null);
-            }
-            else{
-                //If all 4 players have been added, remove the fields and push the data
-                FirstNameField.setVisible(false);
-                LastNameField.setVisible(false);
-                HandicapField.setVisible(false);
-
-
-                PushPlayerData push = new PushPlayerData();
-                getTeamData pushTeam = new getTeamData();
-                try {
-                    //If the data has successfully been pushed to the database, set visibility of label
-                    //to true to confirm
-                    if(push.pushPlayerData(playerList) && pushTeam.pushTeamData(team) ){
-                        labelMaxPlayers.setVisible(true);
-                        labelMaxPlayers.setText("All players have been added successfully");
-                    }
-                    else{
-                        labelMaxPlayers.setVisible(true);
-                        labelMaxPlayers.setText("There was a networking error, please contact your administrator if problem persists");
-                    }
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-            }
-
-        });
 
         btnCancel.setOnAction((event) -> {
             if(playerList.size() < 4){
@@ -113,6 +74,45 @@ Team team;
     }
 
 
+    public void addPlayer(ActionEvent actionEvent) {
+        if(playerList.size() <= 4) {
+            //Get the data from the fields and create a new player object
+            int handi = Integer.parseInt(HandicapField.getText());
+            Player player = new Player(FirstNameField.getText(), LastNameField.getText(), 0, 0, handi, 0, 0,team.getTeamName());
+            System.out.println(player.getFirstName() + " " + player.getLastName() + " " + player.getHandicap());
+            System.out.println(playerList.size());
+            //Add the new player object to the arraylist for player objects
+            playerList.add(player);
 
+            FirstNameField.setText(null);
+            LastNameField.setText(null);
+            HandicapField.setText(null);
+        }
+        else{
+            //If all 4 players have been added, remove the fields and push the data
+            FirstNameField.setVisible(false);
+            LastNameField.setVisible(false);
+            HandicapField.setVisible(false);
+
+
+            PushPlayerData push = new PushPlayerData();
+            getTeamData pushTeam = new getTeamData();
+            try {
+                //If the data has successfully been pushed to the database, set visibility of label
+                //to true to confirm
+                if(push.pushPlayerData(playerList) && pushTeam.pushTeamData(team) ){
+                    labelMaxPlayers.setVisible(true);
+                    labelMaxPlayers.setText("All players have been added successfully");
+                }
+                else{
+                    labelMaxPlayers.setVisible(true);
+                    labelMaxPlayers.setText("There was a networking error, please contact your administrator if problem persists");
+                }
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }
+
+    }
 }
 

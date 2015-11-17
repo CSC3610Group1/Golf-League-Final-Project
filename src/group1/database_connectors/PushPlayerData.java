@@ -103,13 +103,14 @@ public class PushPlayerData {
             stmt = conn.createStatement();
             for(Player p: player) {
                 String sql = "INSERT INTO players " +
-                        "(player_first_name, player_last_name, player_handicap, player_score, player_average, times_played) " +
-                        "VALUES(?, ?, ?, 0, 0, 0)";
+                        "(first_name, last_name, handicap, score, average, times_played, team) " +
+                        "VALUES(?, ?, ?, 0, 0, 0, ?)";
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
 
                 preparedStatement.setString(1,p.getFirstName() );
                 preparedStatement.setString(2, p.getLastName());
                 preparedStatement.setInt(3, p.getHandicap());
+                preparedStatement.setString(4, p.getTeam());
 
 
                 // execute insert SQL stetement
@@ -165,7 +166,7 @@ public class PushPlayerData {
             stmt = conn.createStatement();
             //Update the score and times played
             String sql = "UPDATE players " +
-                    "SET score = (score + " + score + "), times_played = (times_played + 1) WHERE team_name = '"+
+                    "SET score = (score + " + score + "), times_played = (times_played + 1) WHERE team = '"+
                     teamName + "' AND first_name = '" + firstName + "' AND last_name = '" + lastName + "'";
             stmt.executeUpdate(sql);
             return true;

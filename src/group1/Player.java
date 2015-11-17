@@ -13,6 +13,7 @@ public class Player {
 
     private final String firstName; //contains only letters
     private final String lastName; //contains only letter
+    private String team;
     private final int playerScore; //contains positive integer
     private final int playerRank; //contains number between 1-4
     //compares rank of two players
@@ -49,9 +50,25 @@ public class Player {
         this.playerAverage = getPlayerAverage();
         joinedTeam = Calendar.getInstance().getTime();
     }
+    public Player(String firstName, String lastName, int playerScore, int playerRank,
+                  int handicap, int timesPlayed, int playerAverage, String team) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.playerScore = playerScore;
+        this.playerRank = playerRank;
+        this.handicap = handicap;
+        this.timesPlayed = timesPlayed;
+        this.team = team;
+        this.playerAverage = getPlayerAverage();
+        joinedTeam = Calendar.getInstance().getTime();
+    }
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public String getTeam() {
+        return team;
     }
 
     public String getLastName() {

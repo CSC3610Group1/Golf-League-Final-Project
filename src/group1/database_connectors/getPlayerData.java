@@ -168,7 +168,7 @@ public class getPlayerData {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT concat(first_name,' ', last_name) as name FROM players WHERE players.team_name = '" + team + "'";
+            sql = "SELECT concat(first_name,' ', last_name) as name FROM players WHERE players.team = '" + team + "'";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
