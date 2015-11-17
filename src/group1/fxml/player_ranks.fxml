@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.PlayerRankController">
+   <children>
+      <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+      <Label layoutX="242.0" layoutY="33.0" text="Player Ranks">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableRanks" layoutX="10.0" layoutY="93.0" prefHeight="266.0" prefWidth="587.0">
+        <columns>
+          <TableColumn fx:id="colRank" prefWidth="75.0" text="Rank" />
+          <TableColumn fx:id="colFirstName" prefWidth="133.0" text="First Name" />
+            <TableColumn fx:id="colLastName" prefWidth="111.0" text="Last Name" />
+            <TableColumn fx:id="colHandicap" prefWidth="74.0" text="Handicap" />
+            <TableColumn fx:id="colScore" prefWidth="67.0" text="Score" />
+            <TableColumn fx:id="colTeam" prefWidth="137.0" text="Team" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

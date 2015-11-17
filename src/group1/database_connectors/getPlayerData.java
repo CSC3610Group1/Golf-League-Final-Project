@@ -37,7 +37,7 @@ public class getPlayerData {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT first_name, last_name, handicap, score, rank, times_played, average FROM players";
+            sql = "SELECT first_name, last_name, handicap, score, rank, times_played, average, team FROM players";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
@@ -50,11 +50,12 @@ public class getPlayerData {
                 int rank = rs.getInt("rank");
                 int timesPlayed = rs.getInt("times_played");
                 int average = rs.getInt("average");
+                String team = rs.getString("team");
 
 
 
                 //Create player object and add to player list
-                player = new Player(fName, lName, score, rank, handicap, timesPlayed, average);
+                player = new Player(fName, lName, score, rank, handicap, timesPlayed, average, team);
                 playerList.add(player);
 
             }

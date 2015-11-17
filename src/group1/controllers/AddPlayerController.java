@@ -30,7 +30,7 @@ public class AddPlayerController implements Initializable{
 @FXML
     TextField FirstNameField, LastNameField, TeamField,HandicapField;
 @FXML
-Button btnOK, btnCancel;
+Button btnOK, btnCancel, btnClose;
 @FXML
     Label labelMaxPlayers;
 static Team team;
@@ -57,38 +57,30 @@ static Team team;
     public void initialize(URL location, ResourceBundle resources) {
 
 
-        btnCancel.setOnAction((event) -> {
-            if(playerList.size() < 4){
-               PlayerWarningController warn = new PlayerWarningController();
-                warn.addPlayerWarning();
-                //Warn user that there are not enough players are entered for the team
 
-            }
-        });
     }
 
     public void closeWindow(ActionEvent actionEvent) {
-        Node source = (Node)  actionEvent.getSource();
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+        if(playerList.size() < 3){
+            PlayerWarningController warn = new PlayerWarningController();
+            warn.addPlayerWarning();
+            //Warn user that there are not enough players are entered for the team
+
+        }else{
+            Node source = (Node)  actionEvent.getSource();
+            Stage stage  = (Stage) source.getScene().getWindow();
+            stage.close();
+        }
+
     }
 
 
     public void addPlayer(ActionEvent actionEvent) {
-        if(playerList.size() <= 4) {
-            //Get the data from the fields and create a new player object
+        if(playerList.size() == 3) {
+            //Create and add the last player object to the object arraylist before pushing the data to DB
             int handi = Integer.parseInt(HandicapField.getText());
             Player player = new Player(FirstNameField.getText(), LastNameField.getText(), 0, 0, handi, 0, 0,team.getTeamName());
-            System.out.println(player.getFirstName() + " " + player.getLastName() + " " + player.getHandicap());
-            System.out.println(playerList.size());
-            //Add the new player object to the arraylist for player objects
             playerList.add(player);
-
-            FirstNameField.setText(null);
-            LastNameField.setText(null);
-            HandicapField.setText(null);
-        }
-        else{
             //If all 4 players have been added, remove the fields and push the data
             FirstNameField.setVisible(false);
             LastNameField.setVisible(false);
@@ -103,6 +95,10 @@ static Team team;
                 if(push.pushPlayerData(playerList) && pushTeam.pushTeamData(team) ){
                     labelMaxPlayers.setVisible(true);
                     labelMaxPlayers.setText("All players have been added successfully");
+
+                    btnCancel.setVisible(false);
+                    btnOK.setVisible(false);
+                    btnClose.setVisible(true);
                 }
                 else{
                     labelMaxPlayers.setVisible(true);
@@ -111,6 +107,20 @@ static Team team;
             } catch (SQLException e1) {
                 e1.printStackTrace();
             }
+        }
+        else{
+            //Get the data from the fields and create a new player object
+            int handi = Integer.parseInt(HandicapField.getText());
+            Player player = new Player(FirstNameField.getText(), LastNameField.getText(), 0, 0, handi, 0, 0,team.getTeamName());
+            System.out.println(player.getFirstName() + " " + player.getLastName() + " " + player.getHandicap());
+            System.out.println(playerList.size());
+            //Add the new player object to the arraylist for player objects
+            playerList.add(player);
+
+            FirstNameField.setText(null);
+            LastNameField.setText(null);
+            HandicapField.setText(null);
+
         }
 
     }
