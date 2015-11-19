@@ -123,7 +123,9 @@ public class AddGameController implements Initializable {
         //method to connect to the database and get the player names associated with the
         //team name
         comboTeam.setOnAction((e)->{
-
+            //Clear the player combobox when a team is selected to prevent from player combo
+            //filling with the wrong players
+            comboPlayer.getItems().clear();
             ArrayList<String> playerList = new ArrayList<String>();
             players = new getPlayerData();
             playerList = players.getPlayersByTeam(comboTeam.getValue());

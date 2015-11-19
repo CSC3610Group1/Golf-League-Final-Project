@@ -76,6 +76,14 @@ public class ControlsDemoController implements Initializable {
 			btnByTeam.setVisible(false);
 		});
 
+		btnByTeam.setOnAction((e)->{
+			TeamRankController controller = new TeamRankController();
+			controller.startStage();
+			btnRank.setVisible(true);
+			btnByPlayer.setVisible(false);
+			btnByTeam.setVisible(false);
+		});
+
 
 
 	}

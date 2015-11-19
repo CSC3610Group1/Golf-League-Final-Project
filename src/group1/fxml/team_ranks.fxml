@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.TeamRankController">
+   <children>
+      <TableView fx:id="tableRanks" layoutY="123.0" prefHeight="216.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="colRank" prefWidth="145.0" text="Rank" />
+          <TableColumn fx:id="colName" minWidth="5.0" prefWidth="300.0" text="Team Name" />
+            <TableColumn fx:id="colScore" prefWidth="154.0" text="Score" />
+        </columns>
+      </TableView>
+      <Label layoutX="176.0" layoutY="53.0" text="Ranks by Teams">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+   </children>
+</Pane>
