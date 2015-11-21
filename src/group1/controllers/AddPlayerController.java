@@ -35,7 +35,12 @@ Button btnOK, btnCancel, btnClose;
     Label labelMaxPlayers;
 static Team team;
     ArrayList<Player> playerList = new ArrayList<>();
+
+    //Method to start the stage and take the team name passed from the Add Team stage
+    //Team is made static to allow access of object when pushing the players and team
+    //to the database
     public void addPlayerController(Team team) {
+        //Team object is set here
       this.team = team;
         Parent root;
         try {
@@ -60,11 +65,14 @@ static Team team;
 
     }
 
+    //Closes the stage if cancel button is clicked
+    //Check if a full team has been added before cancellation
     public void closeWindow(ActionEvent actionEvent) {
         if(playerList.size() < 3){
             PlayerWarningController warn = new PlayerWarningController();
+            //Pop up window to warn users that team will not be added if
+            //enough players have been added
             warn.addPlayerWarning();
-            //Warn user that there are not enough players are entered for the team
 
         }else{
             Node source = (Node)  actionEvent.getSource();
@@ -81,21 +89,22 @@ static Team team;
             int handi = Integer.parseInt(HandicapField.getText());
             Player player = new Player(FirstNameField.getText(), LastNameField.getText(), 0, 0, handi, 0, 0,team.getTeamName());
             playerList.add(player);
-            //If all 4 players have been added, remove the fields and push the data
+            //If all 4 players have been added, clear the fields and push the data
             FirstNameField.setVisible(false);
             LastNameField.setVisible(false);
             HandicapField.setVisible(false);
 
-
+            //Creating instances of database connecting classes to access their methods
             PushPlayerData push = new PushPlayerData();
             getTeamData pushTeam = new getTeamData();
             try {
-                //If the data has successfully been pushed to the database, set visibility of label
-                //to true to confirm
+                //If both JDBC methods return true
+                //Show label to confirm with user
                 if(push.pushPlayerData(playerList) && pushTeam.pushTeamData(team) ){
                     labelMaxPlayers.setVisible(true);
-                    labelMaxPlayers.setText("All players have been added successfully");
+                    labelMaxPlayers.setText("All players and team have been added successfully");
 
+                    //Change available buttons to user once update is successful
                     btnCancel.setVisible(false);
                     btnOK.setVisible(false);
                     btnClose.setVisible(true);

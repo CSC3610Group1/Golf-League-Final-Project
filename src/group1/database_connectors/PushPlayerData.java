@@ -20,72 +20,7 @@ public class PushPlayerData {
     static final String USER = "root";
     static final String PASS = "";
 
-    public static ArrayList<Team> getTeams() {
-        ArrayList<Team> teamList = new ArrayList<>();
-        Team team;
-        Connection conn = null;
-        Statement stmt = null;
-        try {
-            //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
 
-            //STEP 3: Open a connection
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            //STEP 4: Execute a query
-            stmt = conn.createStatement();
-            String sql;
-            sql = "SELECT team_name, team_score FROM  teams";
-            ResultSet rs = stmt.executeQuery(sql);
-
-            //STEP 5: Extract data from result set
-            while (rs.next()) {
-                //Retrieve by column name
-                String name = rs.getString("team_name");
-                int score = rs.getInt("team_score");
-
-
-
-
-                //Create player object and add to player list
-                team = new Team(name, score);
-                teamList.add(team);
-
-            }
-
-
-            //STEP 6: Clean-up environment
-            rs.close();
-            stmt.close();
-            conn.close();
-
-
-        } catch (SQLException se) {
-            //Handle errors for JDBC
-            ExceptionHandler.sqlException();
-            se.printStackTrace();
-        } catch (Exception e) {
-            //Handle errors for Class.forName
-            e.printStackTrace();
-        } finally {
-            //finally block used to close resources
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-            }// nothing we can do
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-                ExceptionHandler.sqlException();
-            }//end finally try
-        }//end try
-
-
-        return teamList;
-    }
     //Get the arraylist of players and push the first name, last name, and handicap to the database
     //The other fields are defaulted to 0 since these will be new players to the team
     public static boolean pushPlayerData(ArrayList<Player> player) throws SQLException {
@@ -143,6 +78,7 @@ public class PushPlayerData {
         return false;
     }
 
+    //Updates player's score and times played in database by their name and team
     public boolean UpdatePlayerScore(String playerName, String teamName, int score) {
         Connection conn = null;
         Statement stmt = null;

@@ -38,7 +38,6 @@ public class AddGameController implements Initializable {
     @FXML
     ComboBox<String> comboTeam, comboPlayer;
     Stage stage;
-    //initialize method runs after stage is set
 
     public void StartScoreStage(){
 
@@ -66,6 +65,7 @@ public class AddGameController implements Initializable {
 
     }
 
+    //
     public void submitScore(ActionEvent actionEvent) {
         PushPlayerData playerData = new PushPlayerData();
 
@@ -87,17 +87,24 @@ public class AddGameController implements Initializable {
         }
         else{//If all the fields are filled in correctly, push the data to the database, method returns true if update runs successfully
 
-            //parse the score value into an integer
+            //parse the score value from string to integer
             int score = Integer.parseInt(fieldScore.getText());
             //
             if(playerData.UpdatePlayerScore(comboPlayer.getValue(), comboTeam.getValue(),score )){
                 labelUpdateSuccess.setVisible(true);
+                fieldScore.setText(null);
+
+            }
+            else{//If the updatescore method returns false, inform the user
+                labelUpdateSuccess.setVisible(true);
+                labelUpdateSuccess.setText("Unable to update score, please check your network connection");
                 fieldScore.setText(null);
             }
         }
 
     }
 
+    //
     public void closeWindow(ActionEvent actionEvent) {
         Node source = (Node)  actionEvent.getSource();
         Stage stage  = (Stage) source.getScene().getWindow();
@@ -107,6 +114,7 @@ public class AddGameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //ArrayList for holding the team names from the database
         ArrayList<String> teamList = new ArrayList<String>();
         getTeamData getTeams = new getTeamData();
 
@@ -115,17 +123,21 @@ public class AddGameController implements Initializable {
             if(!t.getTeamName().equals("")) {
                 teamList.add(t.getTeamName());
             }
-        }
+    }
+        //Add all the teams to the combobox
         ObservableList<String> comboTeamList = FXCollections.observableList(teamList);
         comboTeam.getItems().addAll(comboTeamList);
 
-        //When an item form the combo box is selected, get the team name and pass it to the
-        //method to connect to the database and get the player names associated with the
-        //team name
+
+        //Handle combobox actions for selecting teams
         comboTeam.setOnAction((e)->{
             //Clear the player combobox when a team is selected to prevent from player combo
             //filling with the wrong players
             comboPlayer.getItems().clear();
+
+            //When an item from this combo box is selected, get the team name and pass it to the
+            //method to connect to the database and get the player names associated with the
+            //team name
             ArrayList<String> playerList = new ArrayList<String>();
             players = new getPlayerData();
             playerList = players.getPlayersByTeam(comboTeam.getValue());

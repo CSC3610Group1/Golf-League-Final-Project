@@ -28,7 +28,6 @@ public class PlayerRankController implements Initializable{
 @FXML
     TableView tableRanks;
 Stage stage;
-ArrayList<Player> playerList;
     public void startStage(){
 
         Parent root;
@@ -50,17 +49,17 @@ ArrayList<Player> playerList;
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        playerList = new ArrayList<>();
         getPlayerData data = new getPlayerData();
 
-        playerList.addAll(data.getPlayers());
 
+        //Set the values for what the table columns should display based on their object fields
         colHandicap.setCellValueFactory(new PropertyValueFactory<Player, String>("handicap"));
         colFirstName.setCellValueFactory(new PropertyValueFactory<Player, String>("firstName"));
         colLastName.setCellValueFactory(new PropertyValueFactory<Player, String>("lastName"));
         colScore.setCellValueFactory(new PropertyValueFactory<Player, String>("playerScore"));
         colTeam.setCellValueFactory(new PropertyValueFactory<Player, String>("team"));
 
+        //Get all the players
         tableRanks.getItems().addAll(data.getPlayers());
     }
 

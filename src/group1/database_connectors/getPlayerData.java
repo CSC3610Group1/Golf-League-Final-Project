@@ -93,68 +93,7 @@ public class getPlayerData {
         return playerList;
     }
 
-    public static void pushPlayerData(Player player) throws SQLException{
-        Connection conn = null;
-        Statement stmt = null;
-        String firstName =  player.getFirstName();
-        String lastName = player.getLastName();
-        int handicap = player.getHandicap();
-        int score = player.getPlayerScore();
-        int rank = player.getPlayerRank();
-        int timesPlayed = player.getTimesPlayed();
-        double average = player.getPlayerAverage();
-        try{
-            //STEP 2: Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
-
-            //STEP 3: Open a connection
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            //STEP 4: Execute a query
-            stmt = conn.createStatement();
-
-            String sql = "INSERT INTO players " +
-                    "(first_name, last_name, handicap, score, rank, times_played, average) " +
-                    "VALUES(?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, firstName);
-            preparedStatement.setString(2, lastName);
-            preparedStatement.setInt(3,handicap);
-            preparedStatement.setInt(4,score);
-            preparedStatement.setInt(5, rank);
-            preparedStatement.setInt(6, timesPlayed);
-            preparedStatement.setDouble(7, average);
-
-// execute insert SQL stetement
-            preparedStatement.executeUpdate();
-
-
-
-
-        }catch(SQLException se){
-            //Handle errors for JDBC
-            ExceptionHandler.sqlException();
-            se.printStackTrace();
-        }catch(Exception e){
-            //Handle errors for Class.forName
-            e.printStackTrace();
-        }finally{
-            //finally block used to close resources
-            try{
-                if(stmt!=null)
-                    conn.close();
-            }catch(SQLException se){
-            }// do nothing
-            try{
-                if(conn!=null)
-                    conn.close();
-            }catch(SQLException se){
-                se.printStackTrace();
-            }//end finally try
-        }//end try
-
-    }
-
+    //Return only the player names by the team that is passed to the method
     public ArrayList<String> getPlayersByTeam(String team) {
         ArrayList<String> playerList = new ArrayList<>();
         Connection conn = null;

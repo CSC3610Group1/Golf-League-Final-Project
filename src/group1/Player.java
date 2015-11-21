@@ -50,6 +50,8 @@ public class Player {
         this.playerAverage = getPlayerAverage();
         joinedTeam = Calendar.getInstance().getTime();
     }
+
+    //Constructor for players to set all fields along with Team name
     public Player(String firstName, String lastName, int playerScore, int playerRank,
                   int handicap, int timesPlayed, int playerAverage, String team) {
         this.firstName = firstName;

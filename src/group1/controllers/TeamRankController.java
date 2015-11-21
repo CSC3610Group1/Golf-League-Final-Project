@@ -30,7 +30,6 @@ public class TeamRankController implements Initializable{
 @FXML
     TableView tableRanks;
 Stage stage;
-ArrayList<Team> teamList;
     public void startStage(){
 
         Parent root;
@@ -52,16 +51,15 @@ ArrayList<Team> teamList;
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        teamList = new ArrayList<>();
         getTeamData data = new getTeamData();
 
-        teamList.addAll(data.getTeams());
 
+        //Set the values for columns to display by Team object field name
         colName.setCellValueFactory(new PropertyValueFactory<Team, String>("teamName"));
         colRank.setCellValueFactory(new PropertyValueFactory<Team, String>("rank"));
         colScore.setCellValueFactory(new PropertyValueFactory<Team, String>("teamScore"));
 
-
+        //Add the Team object list from the getTeams method
         tableRanks.getItems().addAll(data.getTeams());
     }
 

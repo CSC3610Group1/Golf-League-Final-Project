@@ -68,7 +68,7 @@ getTeamData getTeams;
 
     }
 
-
+    //handler to close the window
     public void closeWindow(ActionEvent actionEvent) {
         Node source = (Node)  actionEvent.getSource();
         Stage stage  = (Stage) source.getScene().getWindow();
