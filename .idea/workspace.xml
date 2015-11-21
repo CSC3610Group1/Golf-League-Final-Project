@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="574232d7-8b24-46de-85c0-f9513a01cd21" name="Default" comment="I think I fixed most of the issues with creating teams and players when adding new teams to the database">
+    <list default="true" id="574232d7-8b24-46de-85c0-f9513a01cd21" name="Default" comment="update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Golf League Final Project.iws" />
@@ -48,7 +48,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="present" />
+        <entry key="$PROJECT_DIR$" value="Dev2" />
       </map>
     </option>
   </component>
@@ -583,7 +583,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448132206030</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <created>1448132680804</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1448132680804</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -639,7 +645,8 @@
     <MESSAGE value="I think I fixed most of the issues with creating teams and players when adding new teams to the database" />
     <MESSAGE value="Added an FXML and controller for displaying players, have not implemented methods to generate their rank yet, so rank columns are null" />
     <MESSAGE value="Refactored and added comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored and added comments" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -935,6 +942,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13010204">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
