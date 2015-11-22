@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 public class ControlsDemoController implements Initializable {
 
 	@FXML
-	private Button btnAddTeam, btnViewTeams, btnEnterScore, btnRank,btnByPlayer,btnByTeam;
+	private Button btnAddTeam, btnViewTeams, btnEnterScore, btnRank,btnByPlayer,btnByTeam,btnEditTeam;
 	getTeamData getTeams;
 	ArrayList<String> teamList;
 
@@ -82,6 +82,11 @@ public class ControlsDemoController implements Initializable {
 			btnRank.setVisible(true);
 			btnByPlayer.setVisible(false);
 			btnByTeam.setVisible(false);
+		});
+
+		btnEditTeam.setOnAction((e)->{
+			EditTeamController controller = new EditTeamController();
+			controller.StartEditTeam();
 		});
 
 

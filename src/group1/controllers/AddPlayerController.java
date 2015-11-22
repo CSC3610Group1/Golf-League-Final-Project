@@ -116,6 +116,9 @@ static Team team;
             } catch (SQLException e1) {
                 e1.printStackTrace();
             }
+            catch(ClassNotFoundException ex2){
+                ex2.printStackTrace();
+            }
         }
         else{
             //Get the data from the fields and create a new player object
