@@ -32,8 +32,8 @@ Button btnOK, btnCancel;
 getTeamData getTeams;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
+    getTeams = new getTeamData();
+        
         btnOK.setOnAction((event) -> {
             //Create a new team object, get the name from the field and default the team score to 0
             String name = EnterTeamTextField.getText();

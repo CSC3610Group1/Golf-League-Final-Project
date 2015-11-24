@@ -9,10 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
-
-
-
-
 public class ControlsDemoMain extends Application {
 
 	private Stage primaryStage;

@@ -44,7 +44,7 @@ public class ControlsDemoController implements Initializable {
 		btnViewTeams.setOnAction((event) -> {
 			Parent root;
 			try {
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/show_teams.fxml"));
+				root = FXMLLoader.load(getClass().getClassLoader().getResource("../fxml/show_teams.fxml"));
 				Stage stage = new Stage();
 				stage.setTitle("Enter Team");
 				stage.setScene(new Scene(root, 600, 450));
