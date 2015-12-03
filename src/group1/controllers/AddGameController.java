@@ -2,6 +2,7 @@ package group1.controllers;
 
 
 import group1.Team;
+import group1.Validator;
 import group1.database_connectors.PushPlayerData;
 import group1.database_connectors.getPlayerData;
 import group1.database_connectors.getTeamData;
@@ -68,7 +69,7 @@ public class AddGameController implements Initializable {
     //
     public void submitScore(ActionEvent actionEvent) {
         PushPlayerData playerData = new PushPlayerData();
-
+        Validator validator = new Validator();
         //Check that fields are set before updating the player score
         if(comboTeam.getValue()==null){
             labelPlayerWarning.setVisible(false);
@@ -84,6 +85,13 @@ public class AddGameController implements Initializable {
             labelPlayerWarning.setVisible(false);
             labelScoreWarning.setVisible(true);
             labelTeamWarning.setVisible(false);
+        }
+        else if(validator.isNumbersOnly(fieldScore.getText())){
+            labelPlayerWarning.setVisible(false);
+            labelScoreWarning.setVisible(true);
+            labelScoreWarning.setText("Positive integers only");
+            labelTeamWarning.setVisible(false);
+
         }
         else{//If all the fields are filled in correctly, push the data to the database, method returns true if update runs successfully
 

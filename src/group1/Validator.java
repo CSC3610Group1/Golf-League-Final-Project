@@ -1,5 +1,7 @@
 package group1;
 
+import java.util.regex.Pattern;
+
 /**
  * Class CSC3610
  * Programmer: T.J. Stankus
@@ -9,7 +11,7 @@ package group1;
  */
 public final class Validator {
 
-    private Validator() {
+    public Validator() {
     }
 
     //validates player object and then returns a PlayerValidationFlags object with all errors
@@ -62,5 +64,15 @@ public final class Validator {
     private static boolean isNotNullOrEmpty(String string) {
 
         return !(string == null || string.isEmpty());
+    }
+
+
+    public Boolean isNumbersOnly(String string){
+
+        Pattern p = Pattern.compile("[^0-9]");
+        boolean numbersOnly = p.matcher(string).find();
+
+        return numbersOnly;
+
     }
 }
