@@ -21,5 +21,6 @@
       <Button fx:id="btnEnterScore" layoutX="323.0" layoutY="124.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Enter Score" />
       <Button fx:id="btnByTeam" layoutX="313.0" layoutY="81.0" mnemonicParsing="false" text="By Team" visible="false" />
       <Button fx:id="btnByPlayer" layoutX="388.0" layoutY="81.0" mnemonicParsing="false" text="By Player" visible="false" />
+      <Button fx:id="btnSearchPlayerRank" layoutX="154.0" layoutY="124.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Search Player's Rank" />
    </children>
 </AnchorPane>
