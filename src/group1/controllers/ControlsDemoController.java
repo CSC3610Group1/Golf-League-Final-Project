@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import group1.Team;
+import group1.database_connectors.ExportPlayerData;
 import group1.database_connectors.getTeamData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,13 +16,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
 public class ControlsDemoController implements Initializable {
 
 	@FXML
-	private Button btnAddTeam,btnViewTeams, btnEnterScore, btnRank,btnByPlayer,btnByTeam,btnEditTeam,btnSearchPlayerRank;
+	private Button btnAddTeam,btnExportData, btnEnterScore, btnRank,btnByPlayer,btnByTeam,btnEditTeam,btnSearchPlayerRank;
+	@FXML
+	private Label userFeedback;
 	getTeamData getTeams;
 	ArrayList<String> teamList;
 
@@ -41,18 +45,18 @@ public class ControlsDemoController implements Initializable {
 				e.printStackTrace();
 			}});
 
-		btnViewTeams.setOnAction((event) -> {
-			Parent root;
-			try {
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("../fxml/show_teams.fxml"));
-				Stage stage = new Stage();
-				stage.setTitle("Enter Team");
-				stage.setScene(new Scene(root, 600, 450));
-				stage.show();
+		btnExportData.setOnAction((event) -> {
+			ExportPlayerData export = new ExportPlayerData();
+			if(export.generateCSV()){
+				userFeedback.setVisible(true);
+				userFeedback.setText("Data exported successfully");
+			}
+			else{
+				userFeedback.setVisible(true);
+				userFeedback.setText("There was a problem creating the file");
+			}
 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}});
+			});
 
 		btnEnterScore.setOnAction((e)->{
 
