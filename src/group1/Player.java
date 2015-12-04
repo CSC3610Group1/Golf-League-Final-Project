@@ -15,7 +15,7 @@ public class Player {
     private final String lastName; //contains only letter
     private String team;
     private final int playerScore; //contains positive integer
-    private final int playerRank; //contains number between 1-4
+    private int playerRank; //contains number between 1-4
 
     //compares rank of two players
     public static Comparator<Player> playerRankComparator = (p1, p2) -> {
@@ -122,5 +122,10 @@ public class Player {
                 ", playerAverage=" + playerAverage +
                 ", joinedTeam=" + simpleDateFormat.format(joinedTeam) +
                 '}';
+    }
+
+
+    public void setRank(int rank) {
+        this.playerRank = rank;
     }
 }

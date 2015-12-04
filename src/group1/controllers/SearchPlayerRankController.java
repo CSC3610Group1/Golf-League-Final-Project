@@ -87,7 +87,7 @@ import java.util.ResourceBundle;
                 }
                 Player searchKey = null;
 
-                if(playersWithScore.size() > 2){
+                if(playersWithScore.size() < 2){
                     labelPlayerRank.setText("Not enough players have a score yet!");
                 }
                 else {

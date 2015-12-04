@@ -36,9 +36,23 @@ public class PlayerRankController implements Initializable{
         ArrayList<Player> playerList = new ArrayList<Player>();
         playerList.addAll(data.getPlayers());
 
-        Collections.sort(playerList, Player.playerScoreComparator);
+        ArrayList<Player> playersWithScore = new ArrayList<>();
+        //Only get players with a score
+        for(Player player: playerList){
+            if(player.getPlayerScore() > 0){
+                playersWithScore.add(player);
+            }
 
+        }
+
+        Collections.sort(playersWithScore, Player.playerScoreComparator);
+        int rank = 1;
+        for(Player player: playersWithScore){
+            player.setRank(rank);
+            rank++;
+        }
         //Set the values for what the table columns should display based on their object fields
+        colRank.setCellValueFactory(new PropertyValueFactory<Player, String>("playerRank"));
         colHandicap.setCellValueFactory(new PropertyValueFactory<Player, String>("handicap"));
         colFirstName.setCellValueFactory(new PropertyValueFactory<Player, String>("firstName"));
         colLastName.setCellValueFactory(new PropertyValueFactory<Player, String>("lastName"));
@@ -46,7 +60,7 @@ public class PlayerRankController implements Initializable{
         colTeam.setCellValueFactory(new PropertyValueFactory<Player, String>("team"));
 
         //Get all the players
-        tableRanks.getItems().addAll(playerList);
+        tableRanks.getItems().addAll(playersWithScore);
     }
 
     //handler to close the window
