@@ -16,6 +16,7 @@ public class Player {
     private String team;
     private final int playerScore; //contains positive integer
     private final int playerRank; //contains number between 1-4
+
     //compares rank of two players
     public static Comparator<Player> playerRankComparator = (p1, p2) -> {
         int playerRank1 = p1.getPlayerRank();
@@ -24,13 +25,14 @@ public class Player {
         return playerRank1 - playerRank2;
     };
 
-    //compare the average score of two players
-    public Comparator<Player> playerScoreComparator = (p1, p2) ->{
-        int playerRank1 = p1.getPlayerAverage();
-        int playerRank2 = p2.getPlayerAverage();
+    //compares the score of two players
+    public static Comparator<Player> playerScoreComparator = (p1, p2) ->{
+        int playerRank1 = p1.getPlayerScore();
+        int playerRank2 = p2.getPlayerScore();
 
         return playerRank1 - playerRank2;
     };
+
     private final int handicap; //contains positive integer
     private final int timesPlayed;//contains positive integer
     /*should probably change to double*/
