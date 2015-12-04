@@ -19,7 +19,7 @@ public class GolfLeague {
         int playerAverage;
         String teamName;
         int teamScore;
-        int teamRank;
+        int teamRank = 0;
 
         //test player
         Player player1 = new Player("John", null, 1, 1, -1, -1, 3);

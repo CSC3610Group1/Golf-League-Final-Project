@@ -24,6 +24,12 @@ public class Team {
 		this.teamScore = score;
 	}
 
+	public Team(String name, int score, int rank) {
+		this.teamName = name;
+		this.teamScore = score;
+		this.teamRank = rank;
+	}
+
     public String getTeamName() {
         return teamName;
     }
@@ -31,6 +37,8 @@ public class Team {
     public int getTeamScore() {
         return teamScore;
     }
+
+	public int getTeamRank() { return teamRank; }
 
     @Override
 	public String toString() {

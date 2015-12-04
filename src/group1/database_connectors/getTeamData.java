@@ -32,7 +32,6 @@ public class getTeamData {
 
 
 
-
                 //Create player object and add to player list
                 team = new Team(name, score);
                 teamList.add(team);
