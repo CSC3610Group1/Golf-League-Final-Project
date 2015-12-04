@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -23,6 +24,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 
 /**
@@ -31,10 +33,13 @@ import java.util.ResourceBundle;
     public class SearchPlayerRankController implements Initializable {
         getPlayerData players;
         @FXML
-        Label labelTeamWarning, labelPlayerWarning;
+        Label labelTeamWarning, labelPlayerWarning, labelPlayerRank;
         @FXML
         ComboBox<String> comboTeam, comboPlayer;
+        @FXML
+        Button btnGetRank;
         Stage stage;
+        int rank;
 
     public void StartSearchPlayerRank(){
 
@@ -57,8 +62,8 @@ import java.util.ResourceBundle;
 
         }
 
-        public void searchRank(ActionEvent actionEvent) {
-            PushPlayerData playerData = new PushPlayerData();
+
+        public void searchRank() {
 
             //Check that fields are set before searching player
             if(comboTeam.getValue()==null){
@@ -70,7 +75,28 @@ import java.util.ResourceBundle;
                 labelTeamWarning.setVisible(false);
             }
             else{//If all the fields are filled in correctly, searches for the player's rank
+                ArrayList<Player> playerList = new ArrayList<>();
+                players = new getPlayerData();
+                playerList = players.getPlayers();
 
+                Player searchKey = null;
+
+                for(int i = 0; i < playerList.size(); i++){
+
+                    Player temp = playerList.get(i);
+
+                    if (comboPlayer.getValue() == (temp.getFirstName() + " " + temp.getLastName())){
+                        searchKey = temp;
+                        break;
+                    }
+
+                }
+
+                Collections.sort(playerList, Player.playerScoreComparator);
+
+                rank = Collections.binarySearch(playerList, searchKey, new PlayerRankComp());
+
+                labelPlayerRank.setText("The rank of the player you searched for is " + rank);
             }
 
         }
@@ -112,15 +138,13 @@ import java.util.ResourceBundle;
                 players = new getPlayerData();
                 playerList = players.getPlayersByTeam(comboTeam.getValue());
 
-                //Need to create an arraylist of player objects from database
-                //Then need to sort using comparator, then use the selected player to search for their rank
-
                 ObservableList<String> comboPlayerList = FXCollections.observableList(playerList);
                 comboPlayer.getItems().addAll(comboPlayerList);
             });
 
-
-
+            btnGetRank.setOnAction((e)->{
+                searchRank();
+            });
 
         }
 

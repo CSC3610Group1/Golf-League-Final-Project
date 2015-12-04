@@ -6,6 +6,7 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Rob on 10/7/2015.
@@ -13,7 +14,6 @@ import java.util.ArrayList;
 public class getPlayerData {
 
     DatabaseConnector connector;
-
 
     public ArrayList<Player> getPlayers() {
         ArrayList<Player> playerList = new ArrayList<>();

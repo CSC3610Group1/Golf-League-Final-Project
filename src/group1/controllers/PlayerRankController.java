@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 /**
@@ -32,6 +33,10 @@ public class PlayerRankController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         getPlayerData data = new getPlayerData();
 
+        ArrayList<Player> playerList = new ArrayList<Player>();
+        playerList.addAll(data.getPlayers());
+
+        Collections.sort(playerList, Player.playerScoreComparator);
 
         //Set the values for what the table columns should display based on their object fields
         colHandicap.setCellValueFactory(new PropertyValueFactory<Player, String>("handicap"));
@@ -41,7 +46,7 @@ public class PlayerRankController implements Initializable{
         colTeam.setCellValueFactory(new PropertyValueFactory<Player, String>("team"));
 
         //Get all the players
-        tableRanks.getItems().addAll(data.getPlayers());
+        tableRanks.getItems().addAll(playerList);
     }
 
     //handler to close the window
