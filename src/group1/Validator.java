@@ -78,7 +78,7 @@ public final class Validator {
 
     public Boolean validateTeamNameLength(String string){
 
-        if(string.length() >= 6 && string.length() <= 9){
+        if(string.length() >= 6 && string.length() <= 20){
             return true;
         }
         else {

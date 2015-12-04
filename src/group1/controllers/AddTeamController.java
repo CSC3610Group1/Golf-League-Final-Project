@@ -40,7 +40,7 @@ getTeamData getTeams;
             //Create a new team object, get the name from the field and default the team score to 0
             String name = EnterTeamTextField.getText();
             Team team = new Team(name , 0);
-            System.out.println(validator.isLetters(name));
+
 
             try {
                 //Create a new arraylist to add all of the current team names
@@ -50,11 +50,16 @@ getTeamData getTeams;
                 for(Team t: getTeams.getTeams()){
                    compareTeamNames.add(t.getTeamName());
                 }
-                 if(!validator.validateTeamNameLength(name) && !validator.isLetters(name)){
+                 if(validator.isLetters(name) == false){
                     EnterTeamTextField.setText(null);
                     labelTeamExists.setVisible(true);
-                    labelTeamExists.setText("Team name must be 6-9 letters only");
+                     labelTeamExists.setText("No special characters may be used");
                 }
+                 else if(validator.validateTeamNameLength(name) == false){
+                     EnterTeamTextField.setText(null);
+                     labelTeamExists.setVisible(true);
+                     labelTeamExists.setText("Team name must be 6-20 characters");
+                 }
                 else if(compareTeamNames.contains(name)){
                     //If the team name exists, clear the field and notify the user
                     EnterTeamTextField.setText(null);

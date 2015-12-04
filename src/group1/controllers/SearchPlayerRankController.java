@@ -78,25 +78,39 @@ import java.util.ResourceBundle;
                 ArrayList<Player> playerList = new ArrayList<>();
                 players = new getPlayerData();
                 playerList = players.getPlayers();
+                ArrayList<Player> playersWithScore = new ArrayList<>();
 
+                for(Player player: playerList){
+                    if(player.getPlayerScore() > 0){
+                        playersWithScore.add(player);
+                    }
+                }
                 Player searchKey = null;
 
-                for(int i = 0; i < playerList.size(); i++){
+                if(playersWithScore.size() > 2){
+                    labelPlayerRank.setText("Not enough players have a score yet!");
+                }
+                else {
+                    for (int i = 0; i < playersWithScore.size(); i++) {
 
-                    Player temp = playerList.get(i);
+                        Player temp = playersWithScore.get(i);
 
-                    if (comboPlayer.getValue() == (temp.getFirstName() + " " + temp.getLastName())){
-                        searchKey = temp;
-                        break;
+                        if (comboPlayer.getValue().equals(temp.getFirstName() + " " + temp.getLastName())) {
+                            searchKey = temp;
+                            break;
+                        }
+                        else{
+                            labelPlayerRank.setText("Did not find player you were looking for");
+                        }
+
                     }
 
+                    Collections.sort(playersWithScore, Player.playerScoreComparator);
+
+                    rank = (Collections.binarySearch(playersWithScore, searchKey, new PlayerRankComp()) + 1);
+
+                    labelPlayerRank.setText("The rank of the player you searched for is " + rank );
                 }
-
-                Collections.sort(playerList, Player.playerScoreComparator);
-
-                rank = Collections.binarySearch(playerList, searchKey, new PlayerRankComp());
-
-                labelPlayerRank.setText("The rank of the player you searched for is " + rank);
             }
 
         }
