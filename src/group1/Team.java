@@ -8,6 +8,7 @@ import java.util.Comparator;
 public class Team {
 	private final String teamName;
 	private final int teamScore;
+	private int teamRank;
 
 	public static Comparator<Team> teamScoreComparator = (p1, p2) -> {
 		int teamRank1 = p1.getTeamScore();
@@ -31,10 +32,13 @@ public class Team {
         return teamScore;
     }
 
-
     @Override
 	public String toString() {
 		return "Team: " + teamName + "\n" +
 				"Score: " + teamScore + "\n";
+	}
+
+	public void setRank(int rank) {
+		this.teamRank = rank;
 	}
 }

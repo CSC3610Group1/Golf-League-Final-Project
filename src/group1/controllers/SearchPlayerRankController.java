@@ -109,7 +109,7 @@ import java.util.ResourceBundle;
 
                     rank = (Collections.binarySearch(playersWithScore, searchKey, new PlayerRankComp()) + 1);
 
-                    labelPlayerRank.setText("The rank of the player you searched for is " + rank );
+                    labelPlayerRank.setText("The rank of the player you searched for is " + rank);
                 }
             }
 

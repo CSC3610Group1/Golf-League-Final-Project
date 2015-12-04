@@ -51,6 +51,7 @@ public class PlayerRankController implements Initializable{
             player.setRank(rank);
             rank++;
         }
+
         //Set the values for what the table columns should display based on their object fields
         colRank.setCellValueFactory(new PropertyValueFactory<Player, String>("playerRank"));
         colHandicap.setCellValueFactory(new PropertyValueFactory<Player, String>("handicap"));

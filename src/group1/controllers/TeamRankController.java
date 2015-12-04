@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 /**
@@ -34,14 +35,33 @@ public class TeamRankController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         getTeamData data = new getTeamData();
 
+        ArrayList<Team> teamList = new ArrayList<Team>();
+        teamList.addAll(data.getTeams());
+
+        ArrayList<Team> teamsWithScore = new ArrayList<>();
+        //Only get players with a score
+        for(Team team: teamList){
+            if(team.getTeamScore() > 0){
+                teamsWithScore.add(team);
+            }
+
+        }
+
+        Collections.sort(teamList, Team.teamScoreComparator);
+
+        int rank = 1;
+        for(Team team: teamsWithScore){
+            team.setRank(rank);
+            rank++;
+        }
 
         //Set the values for columns to display by Team object field name
         colName.setCellValueFactory(new PropertyValueFactory<Team, String>("teamName"));
-        colRank.setCellValueFactory(new PropertyValueFactory<Team, String>("rank"));
+        colRank.setCellValueFactory(new PropertyValueFactory<Team, String>("teamRank"));
         colScore.setCellValueFactory(new PropertyValueFactory<Team, String>("teamScore"));
 
         //Add the Team object list from the getTeams method
-        tableRanks.getItems().addAll(data.getTeams());
+        tableRanks.getItems().addAll(teamsWithScore);
     }
 
     //handler to close the window
