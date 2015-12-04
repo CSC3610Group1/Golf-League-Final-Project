@@ -36,35 +36,7 @@ public class EditTeamController implements Initializable {
     Label labelTeamWarning, labelPlayerWarning, labelFirstNameWarning, labelLastNameWarning, labelUpdateSuccess;
     @FXML
     ComboBox<String> comboTeam, comboPlayer;
-    Stage stage;
 
-    public void StartEditTeam(){
-
-
-        Parent root;
-        try {
-
-
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/edit_team.fxml"));
-            stage = new Stage();
-            stage.setTitle("Select a team to edit");
-            stage.setScene(new Scene(root, 600, 450));
-
-            stage.show();
-
-
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-
-
-
-
-    }
-
-    //
     public void submitScore(ActionEvent actionEvent) {
         PushPlayerData playerData = new PushPlayerData();
 
@@ -114,10 +86,10 @@ public class EditTeamController implements Initializable {
     }
 
     //
+    //handler to close the window
     public void closeWindow(ActionEvent actionEvent) {
-        Node source = (Node)  actionEvent.getSource();
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+        ControlsDemoMain main = new ControlsDemoMain();
+        main.newLayout("group1/fxml/welcome.fxml");
     }
 
 

@@ -38,35 +38,9 @@ public class AddGameController implements Initializable {
     Label labelTeamWarning, labelPlayerWarning, labelScoreWarning, labelUpdateSuccess;
     @FXML
     ComboBox<String> comboTeam, comboPlayer;
-    Stage stage;
-
-    public void StartScoreStage(){
-
-
-        Parent root;
-        try {
-
-
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/add_game.fxml"));
-            stage = new Stage();
-            stage.setTitle("Enter scores for each player");
-            stage.setScene(new Scene(root, 600, 450));
-
-            stage.show();
 
 
 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-
-
-
-
-    }
-
-    //
     public void submitScore(ActionEvent actionEvent) {
         PushPlayerData playerData = new PushPlayerData();
         Validator validator = new Validator();
@@ -97,8 +71,10 @@ public class AddGameController implements Initializable {
 
             //parse the score value from string to integer
             int score = Integer.parseInt(fieldScore.getText());
-            //
-            if(playerData.UpdatePlayerScore(comboPlayer.getValue(), comboTeam.getValue(),score )){
+
+            //Updates the player's individual score and the the team's score
+            if(playerData.UpdatePlayerScore(comboPlayer.getValue(), comboTeam.getValue(),score )
+                    && playerData.UpdateTeamScore(comboTeam.getValue(), score)){
                 labelUpdateSuccess.setVisible(true);
                 fieldScore.setText(null);
 
@@ -112,11 +88,11 @@ public class AddGameController implements Initializable {
 
     }
 
-    //
+
+    //handler to close the window
     public void closeWindow(ActionEvent actionEvent) {
-        Node source = (Node)  actionEvent.getSource();
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+        ControlsDemoMain main = new ControlsDemoMain();
+        main.newLayout("group1/fxml/welcome.fxml");
     }
 
 

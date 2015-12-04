@@ -8,20 +8,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="247.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.ControlsDemoController">
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.ControlsDemoController">
    <children>
-      <Button fx:id="btnExportData" layoutX="45.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Export Data" />
-      <Button fx:id="btnAddTeam" layoutX="183.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Add Team" />
-      <Button fx:id="btnRank" layoutX="323.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Rank" />
-      <Label layoutX="45.0" layoutY="14.0" prefHeight="67.0" prefWidth="442.0" text="Welcome To the Outting">
+      <Label alignment="CENTER" layoutX="79.0" layoutY="54.0" prefHeight="67.0" prefWidth="442.0" text="Welcome To the Outting" textAlignment="CENTER">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Button fx:id="btnEditTeam" layoutX="45.0" layoutY="124.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Edit Team" />
-      <Button fx:id="btnEnterScore" layoutX="323.0" layoutY="124.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Enter Score" />
-      <Button fx:id="btnByTeam" layoutX="313.0" layoutY="81.0" mnemonicParsing="false" text="By Team" visible="false" />
-      <Button fx:id="btnByPlayer" layoutX="388.0" layoutY="81.0" mnemonicParsing="false" text="By Player" visible="false" />
-      <Button fx:id="btnSearchPlayerRank" layoutX="154.0" layoutY="124.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Search Player's Rank" />
-      <Label fx:id="userFeedback" layoutX="218.0" layoutY="182.0" text="Label" visible="false" />
+      <Button fx:id="btnExportData" layoutX="97.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Export Data" />
+      <Button fx:id="btnAddTeam" layoutX="235.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Add Team" />
+      <Button fx:id="btnRank" layoutX="375.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Rank" />
+      <Button fx:id="btnEditTeam" layoutX="97.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Edit Team" />
+      <Button fx:id="btnEnterScore" layoutX="375.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Enter Score" />
+      <Button fx:id="btnByTeam" layoutX="365.0" layoutY="155.0" mnemonicParsing="false" text="By Team" visible="false" />
+      <Button fx:id="btnByPlayer" layoutX="440.0" layoutY="155.0" mnemonicParsing="false" text="By Player" visible="false" />
+      <Button fx:id="btnSearchPlayerRank" layoutX="206.0" layoutY="198.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Search Player's Rank" />
+      <Label fx:id="userFeedback" layoutX="269.0" layoutY="252.0" text="Label" visible="false" />
    </children>
 </AnchorPane>

@@ -27,26 +27,7 @@ public class PlayerRankController implements Initializable{
     TableColumn<Player, String> colRank, colFirstName, colHandicap, colScore, colTeam,colLastName;
 @FXML
     TableView tableRanks;
-Stage stage;
-    public void startStage(){
 
-        Parent root;
-        try {
-
-
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/player_ranks.fxml"));
-            stage = new Stage();
-            stage.setTitle("Players by Rank");
-            stage.setScene(new Scene(root, 600, 450));
-
-            stage.show();
-
-
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         getPlayerData data = new getPlayerData();
@@ -63,9 +44,9 @@ Stage stage;
         tableRanks.getItems().addAll(data.getPlayers());
     }
 
+    //handler to close the window
     public void closeWindow(ActionEvent actionEvent) {
-        Node source = (Node)  actionEvent.getSource();
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+        ControlsDemoMain main = new ControlsDemoMain();
+        main.newLayout("group1/fxml/welcome.fxml");
     }
 }

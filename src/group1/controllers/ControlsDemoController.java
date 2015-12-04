@@ -33,17 +33,9 @@ public class ControlsDemoController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		btnAddTeam.setOnAction((event) -> {
-			Parent root;
-			try {
-				root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/enter_team_name.fxml"));
-				Stage stage = new Stage();
-				stage.setTitle("Enter Team");
-				stage.setScene(new Scene(root, 600, 450));
-				stage.show();
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			}});
+			ControlsDemoMain main = new ControlsDemoMain();
+			main.newLayout("group1/fxml/enter_team_name.fxml");
+			});
 
 		btnExportData.setOnAction((event) -> {
 			ExportPlayerData export = new ExportPlayerData();
@@ -59,9 +51,9 @@ public class ControlsDemoController implements Initializable {
 			});
 
 		btnEnterScore.setOnAction((e)->{
+			ControlsDemoMain main = new ControlsDemoMain();
+			main.newLayout("group1/fxml/add_game.fxml");
 
-			AddGameController cont = new AddGameController();
-			cont.StartScoreStage();
 			});
 
 		btnRank.setOnAction((e)->{
@@ -73,24 +65,24 @@ public class ControlsDemoController implements Initializable {
 		});
 
 		btnByPlayer.setOnAction((e)->{
-			PlayerRankController controller = new PlayerRankController();
-			controller.startStage();
+			ControlsDemoMain main = new ControlsDemoMain();
+			main.newLayout("group1/fxml/player_ranks.fxml");
 			btnRank.setVisible(true);
 			btnByPlayer.setVisible(false);
 			btnByTeam.setVisible(false);
 		});
 
 		btnByTeam.setOnAction((e)->{
-			TeamRankController controller = new TeamRankController();
-			controller.startStage();
+			ControlsDemoMain main = new ControlsDemoMain();
+			main.newLayout("group1/fxml/team_ranks.fxml");
 			btnRank.setVisible(true);
 			btnByPlayer.setVisible(false);
 			btnByTeam.setVisible(false);
 		});
 
 		btnEditTeam.setOnAction((e)->{
-			EditTeamController controller = new EditTeamController();
-			controller.StartEditTeam();
+			ControlsDemoMain main = new ControlsDemoMain();
+			main.newLayout("group1/fxml/edit_team.fxml");
 		});
 
 		btnSearchPlayerRank.setOnAction((e)->{

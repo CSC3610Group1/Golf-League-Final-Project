@@ -85,6 +85,35 @@ public class PushPlayerData {
 
     }
 
+    //Updates team's score by team name
+    public boolean UpdateTeamScore(String teamName, int score) {
+        connector = new DatabaseConnector();
+
+
+        try {
+            connector.MakeConnection();
+            //Update the score and times played
+            String sql = "UPDATE teams " +
+                    "SET team_score = (team_score + " + score + ") WHERE team_name = '"+
+                    teamName + "'";
+            connector.returnStatement().executeUpdate(sql);
+            return true;
+
+        } catch (SQLException se) {
+            connector.CloseConnection();
+            //Handle errors for JDBC
+            ExceptionHandler.sqlException();
+            se.printStackTrace();
+            return false;
+        }
+
+        catch(ClassNotFoundException ex2){
+            connector.CloseConnection();
+            return false;
+        }
+
+    }
+
     //Method for editing the players on selected team, score and times played are reset as these are new players for the team
     public boolean UpdatePlayer(String oldPLayer, String team, String newPlayerFirstName, String newPlayerLastName) {
         connector = new DatabaseConnector();

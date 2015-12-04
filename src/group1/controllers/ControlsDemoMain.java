@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -11,7 +12,7 @@ import javafx.scene.layout.BorderPane;
 
 public class ControlsDemoMain extends Application {
 
-	private Stage primaryStage;
+	static Stage primaryStage;
 	private BorderPane rootlayout;
 	private AnchorPane controlsData;
 	
@@ -51,11 +52,29 @@ public class ControlsDemoMain extends Application {
 			e.printStackTrace();
 		}
 		//set scene 
-		Scene scene = new Scene(rootlayout);
+		Scene scene = new Scene(rootlayout, 600, 450);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	
+
+	//Method to open a new scene in the primary stage
+	//to circumvent having too many new windows pop up
+	//as the user navigates through the app
+	public void newLayout(String resource){
+		//Clear out the current scene
+		primaryStage.setScene(null);
+		//load root layout form fxml file
+		Parent root;
+		try {
+			//Loads the fxml file that the method was invoked with
+			root = FXMLLoader.load(getClass().getClassLoader().getResource(resource));
+			primaryStage.setScene(new Scene(root,600, 450));
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 	public static void main(String[] args) {
 		launch(args);
 	}

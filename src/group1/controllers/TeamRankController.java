@@ -29,26 +29,7 @@ public class TeamRankController implements Initializable{
     TableColumn<Team, String> colRank, colName, colScore;
 @FXML
     TableView tableRanks;
-Stage stage;
-    public void startStage(){
 
-        Parent root;
-        try {
-
-
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/team_ranks.fxml"));
-            stage = new Stage();
-            stage.setTitle("Teams by Rank");
-            stage.setScene(new Scene(root, 600, 450));
-
-            stage.show();
-
-
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         getTeamData data = new getTeamData();
@@ -63,9 +44,9 @@ Stage stage;
         tableRanks.getItems().addAll(data.getTeams());
     }
 
+    //handler to close the window
     public void closeWindow(ActionEvent actionEvent) {
-        Node source = (Node)  actionEvent.getSource();
-        Stage stage  = (Stage) source.getScene().getWindow();
-        stage.close();
+        ControlsDemoMain main = new ControlsDemoMain();
+        main.newLayout("group1/fxml/welcome.fxml");
     }
 }

@@ -51,7 +51,7 @@ public final class Validator {
     }
 
     //checks if string is a letter based on Unicode specifications
-    private static boolean isLetters(String string) {
+    public static boolean isLetters(String string) {
         return isNotNullOrEmpty(string) && string.chars().allMatch(Character::isLetter);
     }
 
@@ -74,5 +74,15 @@ public final class Validator {
 
         return numbersOnly;
 
+    }
+
+    public Boolean validateTeamNameLength(String string){
+
+        if(string.length() >= 6 && string.length() <= 9){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
