@@ -99,6 +99,7 @@ import java.util.ResourceBundle;
                             searchKey = temp;
                             break;
                         }
+
                         else{
                             labelPlayerRank.setText("Did not find player you were looking for");
                         }

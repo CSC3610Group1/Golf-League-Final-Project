@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.TeamRankController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#33cc33 0%, white 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.TeamRankController">
    <children>
       <TableView fx:id="tableRanks" layoutY="123.0" prefHeight="216.0" prefWidth="600.0">
         <columns>
@@ -14,11 +14,11 @@
             <TableColumn fx:id="colScore" prefWidth="154.0" text="Score" />
         </columns>
       </TableView>
-      <Label layoutX="176.0" layoutY="53.0" text="Ranks by Teams">
+      <Label layoutX="176.0" layoutY="53.0" text="Ranks by Teams" textFill="WHITE">
          <font>
-            <Font size="35.0" />
+            <Font name="Imprint MT Shadow" size="35.0" />
          </font>
       </Label>
-      <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+      <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: white; -fx-background-radius: 10;" text="Close" />
    </children>
 </Pane>
