@@ -50,6 +50,11 @@ public final class Validator {
         return false;
     }
 
+    public static String isScoreValid(String string){
+      if (isNumbersOnly(string) && isNotNullOrEmpty(string) && isPositive(Integer.parseInt(string))){
+          return "";
+      }else{ return "Score must only contain positive numbers valid ver.";
+    }}
     //checks if string is a letter based on Unicode specifications
     public static boolean isLetters(String string) {
         return isNotNullOrEmpty(string) && string.chars().allMatch(Character::isLetter);
@@ -66,19 +71,17 @@ public final class Validator {
         return !(string == null || string.isEmpty());
     }
 
+    public static Boolean isNumbersOnly(String string){
 
-    public Boolean isNumbersOnly(String string){
+        Pattern p = Pattern.compile("\\d+");
 
-        Pattern p = Pattern.compile("[^0-9]");
-        boolean numbersOnly = p.matcher(string).find();
-
-        return numbersOnly;
+        return p.matcher(string).find();
 
     }
 
-    public Boolean validateTeamNameLength(String string){
+    public static Boolean validateTeamNameLength(String string){
 
-        if(string.length() >= 6 && string.length() <= 20){
+        if(string.length() >= 2 && string.length() <= 20){
             return true;
         }
         else {

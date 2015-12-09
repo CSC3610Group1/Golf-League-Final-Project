@@ -5,6 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
+<?import group1.RestrictiveTextField?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.EditTeamController">
    <children>
       <Label alignment="CENTER" layoutX="228.0" layoutY="57.0" prefHeight="60.0" prefWidth="145.0" text="Team Editor">
@@ -14,18 +15,18 @@
       </Label>
       <ComboBox fx:id="comboTeam" layoutX="226.0" layoutY="132.0" prefWidth="150.0" />
       <ComboBox fx:id="comboPlayer" layoutX="226.0" layoutY="200.0" prefWidth="150.0" />
-      <TextField fx:id="fieldFirstName" layoutX="173.0" layoutY="296.0" prefHeight="25.0" prefWidth="111.0" />
+      <RestrictiveTextField fx:id="fieldFirstName" layoutX="173.0" layoutY="296.0" prefHeight="25.0" prefWidth="111.0" />
       <Label layoutX="149.0" layoutY="136.0" text="Select Team:" />
-      <Label layoutX="86.0" layoutY="204.0" text="Select player to replace:" />
-      <Label layoutX="87.0" layoutY="300.0" text="First Name:" />
-      <Button layoutX="234.0" layoutY="339.0" mnemonicParsing="false" onAction="#submitScore" text="Submit" />
+      <Label fx:id="labelSelectPlayer" layoutX="86.0" layoutY="204.0" text="Select player to replace:" />
+      <Label fx:id="labelFirstName" layoutX="87.0" layoutY="300.0" text="First Name:" />
+      <Button fx:id="btnSubmitScore" layoutX="234.0" layoutY="339.0" mnemonicParsing="false" onAction="#submitScore" text="Submit" />
       <Button layoutX="323.0" layoutY="339.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancel" />
       <Label fx:id="labelTeamWarning" layoutX="391.0" layoutY="136.0" text="You need to select a team!" textFill="#ed6607" visible="false" />
       <Label fx:id="labelPlayerWarning" layoutX="391.0" layoutY="204.0" text="You need to select a player!" textFill="#ed6607" visible="false" />
       <Label fx:id="labelUpdateSuccess" layoutX="234.0" layoutY="378.0" prefHeight="17.0" prefWidth="178.0" text="Player has been replaced" textFill="#1c8097" visible="false" />
-      <TextField fx:id="fieldLastName" layoutX="366.0" layoutY="296.0" prefHeight="25.0" prefWidth="111.0" />
-      <Label layoutX="301.0" layoutY="300.0" text="Last Name:" />
-      <Label layoutX="253.0" layoutY="255.0" text="New Player">
+      <RestrictiveTextField fx:id="fieldLastName" layoutX="366.0" layoutY="296.0" prefHeight="25.0" prefWidth="111.0" />
+      <Label fx:id="labelLastName" layoutX="301.0" layoutY="300.0" text="Last Name:" />
+      <Label fx:id="labelNewPlayer" layoutX="253.0" layoutY="255.0" text="New Player">
          <font>
             <Font size="19.0" />
          </font>

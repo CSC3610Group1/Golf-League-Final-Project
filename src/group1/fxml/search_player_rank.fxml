@@ -14,8 +14,8 @@
         </Label>
         <ComboBox fx:id="comboTeam" layoutX="226.0" layoutY="132.0" prefWidth="150.0" />
         <ComboBox fx:id="comboPlayer" layoutX="226.0" layoutY="200.0" prefWidth="150.0" />
-        <Label layoutX="124.0" layoutY="136.0" text="Select Team:" />
-        <Label layoutX="57.0" layoutY="205.0" text="Select player to find rank:" />
+        <Label fx:id="labelSelectTeam" layoutX="124.0" layoutY="136.0" text="Select Team:" />
+        <Label fx:id="labelSelectPlayerRank" layoutX="57.0" layoutY="205.0" text="Select player to find rank:" />
         <Button fx:id="btnGetRank" layoutX="204.0" layoutY="254.0" mnemonicParsing="false" text="Get Rank" />
         <Button layoutX="330.0" layoutY="254.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancel" />
         <Label fx:id="labelTeamWarning" layoutX="391.0" layoutY="136.0" text="You need to select a team!" textFill="#ed6607" visible="false" />

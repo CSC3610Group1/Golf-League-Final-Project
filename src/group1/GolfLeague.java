@@ -65,6 +65,7 @@ public class GolfLeague {
 
         Collections.sort(teamMembers, Player.playerRankComparator);
 
+
         //Iterator used to walk through teamMembers list; displayed using while loop
         for (Object teamMember1 : teamMembers) {
             System.out.print("\nTeam members sorted by rank: " + teamMember1);
