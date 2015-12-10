@@ -1,3 +1,5 @@
+//Controller for the welcome page of the golf league
+
 package group1.controllers;
 
 import group1.database_connectors.ExportPlayerData;
@@ -10,7 +12,6 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 
 public class ControlsDemoController implements Initializable {
 

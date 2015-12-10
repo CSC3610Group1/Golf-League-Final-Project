@@ -1,3 +1,5 @@
+//Defines comparator to rank players
+
 package group1.controllers;
 
 import group1.Player;

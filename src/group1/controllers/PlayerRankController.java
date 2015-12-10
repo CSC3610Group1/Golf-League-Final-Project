@@ -1,3 +1,5 @@
+//This is the controller class for displaying ranked players in the league
+
 package group1.controllers;
 
 import group1.Player;

@@ -1,14 +1,11 @@
+/** Validates Player and Team objects and returns a PlayerValidationFlags
+ * or TeamValidationFlags object with the errors that occurred
+ */
+
 package group1;
 
 import java.util.regex.Pattern;
 
-/**
- * Class CSC3610
- * Programmer: T.J. Stankus
- * Date: 10/12/2015
- * Purpose: Validates Player and Team objects and returns a PlayerValidationFlags
- * or TeamValidationFlags object with the errors that occurred
- */
 public final class Validator {
 
     public Validator() {

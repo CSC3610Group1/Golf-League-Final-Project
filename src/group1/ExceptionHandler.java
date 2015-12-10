@@ -1,3 +1,7 @@
+/**
+ * Class to hold exception pop up messages
+ */
+
 package group1;
 
 import javafx.scene.control.Alert;
@@ -6,10 +10,6 @@ import javafx.stage.StageStyle;
 import javax.swing.*;
 import java.util.stream.Collectors;
 
-/**
- * Created by rnice01 on 11/3/2015.
- * Class to hold exception pop up messages
- */
 public class ExceptionHandler extends Exception{
     static JOptionPane frame;
     public static void sqlException(){

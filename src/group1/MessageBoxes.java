@@ -1,10 +1,9 @@
+//Displays message boxes for confirmation or error
+
 package group1;
 
 import javax.swing.*;
 
-/**
- * Created by rnice01 on 11/4/2015.
- */
 public class MessageBoxes {
     public static void returnMessage(String message, String type){
         JOptionPane frame = new JOptionPane();

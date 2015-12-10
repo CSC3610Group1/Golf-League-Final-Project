@@ -1,6 +1,6 @@
 /**
  * This class defines the player object, including a player's name, score, rank, and handicap
- **/
+ */
 
 package group1;
 

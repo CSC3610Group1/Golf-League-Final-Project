@@ -1,5 +1,6 @@
-package group1.controllers;
+//This controller is to search for a players rank
 
+package group1.controllers;
 
 import group1.Player;
 import group1.Team;

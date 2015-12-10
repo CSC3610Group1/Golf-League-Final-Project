@@ -1,3 +1,5 @@
+//Controller class for adding a team to the league
+
 package group1.controllers;
 
 import group1.Team;

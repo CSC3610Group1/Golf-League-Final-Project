@@ -1,3 +1,5 @@
+//Pushes player data to the database
+
 package group1.database_connectors;
 
 import group1.ExceptionHandler;
@@ -7,9 +9,6 @@ import group1.Team;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- * Created by rnice01 on 11/11/2015.
- */
 public class PushPlayerData {
     DatabaseConnector connector;
 

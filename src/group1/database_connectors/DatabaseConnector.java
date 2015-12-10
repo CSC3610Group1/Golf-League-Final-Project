@@ -1,3 +1,9 @@
+/**
+ * This class is used for making DB connections, update, and select queries
+ * Made for cleaning up the classes used for classes used to create the team and player objects
+ * as they were getting messy.
+ */
+
 package group1.database_connectors;
 
 import group1.ExceptionHandler;
@@ -7,12 +13,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * Created by rnice01 on 11/21/2015.
- * This class is used for making DB connections, update, and select queries
- * Made for cleaning up the classes used for classes used to create the team and player objects
- * as they were getting messy
- */
 public class DatabaseConnector {
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";

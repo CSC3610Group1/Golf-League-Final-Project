@@ -1,12 +1,12 @@
+/** General methods for filtering text field input
+ */
+
 package group1;
 
 import javafx.scene.control.TextFormatter;
 
 import java.util.function.UnaryOperator;
 
-/**
- *General methods for filtering text field input
- */
 public final class Formatter {
     private Formatter() {}
 

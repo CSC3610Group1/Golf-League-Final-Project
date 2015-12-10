@@ -1,5 +1,6 @@
-package group1.controllers;
+//Controller class for adding a game (score)
 
+package group1.controllers;
 
 import group1.*;
 import group1.database_connectors.getPlayerData;

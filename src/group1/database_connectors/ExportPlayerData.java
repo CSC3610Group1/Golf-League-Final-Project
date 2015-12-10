@@ -1,3 +1,9 @@
+/**
+ * This class holds a method to export some data stored in a local database by connecting with a JDBC driver connection
+ * and creating an ArrayList of Player objects, the getters are used on the player objects to append information
+ * about them to a CSV file
+ */
+
 package group1.database_connectors;
 
 import group1.Player;
@@ -6,12 +12,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Created by rnice01 on 12/3/2015.
- * This class holds a method to export some data stored in a local database by connecting with a JDBC driver connection
- * and creating an ArrayList of Player objects, the getters are used on the player objects to append information
- * about them to a CSV file
- */
 public class ExportPlayerData {
 
     //Method returns a boolean value for calling button action to

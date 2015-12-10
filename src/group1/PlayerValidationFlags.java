@@ -1,14 +1,10 @@
+//Creates a PlayerValidationFlags objects than returns an ArrayList with all errors
+
 package group1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Class CSC3610
- * Programmer: T.J. Stankus
- * Date: 10/12/2015
- * Purpose: Creates a PlayerValidationFlags objects than returns an ArrayList with all errors
- */
 public final class PlayerValidationFlags {
     private final boolean validFirstName;
     private final boolean validLastName;

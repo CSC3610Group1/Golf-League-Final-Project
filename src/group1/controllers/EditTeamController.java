@@ -1,3 +1,5 @@
+//Controller for the edit team page, to edit the players on a team
+
 package group1.controllers;
 
 
