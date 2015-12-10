@@ -1,5 +1,6 @@
-package group1.controllers;
+//This controller class is for displaying the rank of a selected player
 
+package group1.controllers;
 
 import group1.Player;
 import group1.Team;
@@ -27,9 +28,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
-/**
- * Created by reesemodloff on 12/2/15.
- */
     public class SearchPlayerRankController implements Initializable {
         getPlayerData players;
         @FXML

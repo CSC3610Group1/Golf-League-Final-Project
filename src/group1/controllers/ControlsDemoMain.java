@@ -1,3 +1,5 @@
+//Class defines the elements for the welcome page of the league
+
 package group1.controllers;
 
 import java.io.IOException;

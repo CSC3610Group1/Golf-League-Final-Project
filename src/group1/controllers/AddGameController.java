@@ -1,5 +1,6 @@
-package group1.controllers;
+//Controller class for adding a game (score)
 
+package group1.controllers;
 
 import group1.Team;
 import group1.Validator;
@@ -26,10 +27,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
-/**
- * Created by rnice01 on 11/13/2015.
- */
 public class AddGameController implements Initializable {
     getPlayerData players;
     @FXML

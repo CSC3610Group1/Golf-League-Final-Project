@@ -1,3 +1,5 @@
+//This is the controller class for displaying ranked players in the league
+
 package group1.controllers;
 
 import group1.Player;
@@ -20,9 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-/**
- * Created by rnice01 on 11/17/2015.
- */
 public class PlayerRankController implements Initializable{
 @FXML
     TableColumn<Player, String> colRank, colFirstName, colHandicap, colScore, colTeam,colLastName;

@@ -1,4 +1,7 @@
+//Gets player data from database
+
 package group1.database_connectors;
+
 import group1.ExceptionHandler;
 import group1.Player;
 
@@ -8,9 +11,6 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by Rob on 10/7/2015.
- */
 public class getPlayerData {
 
     DatabaseConnector connector;

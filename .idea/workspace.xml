@@ -2,20 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="574232d7-8b24-46de-85c0-f9513a01cd21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/group1/fxml/hole.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/BinarySearch.java" afterPath="$PROJECT_DIR$/src/group1/BinarySearch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/ExceptionHandler.java" afterPath="$PROJECT_DIR$/src/group1/ExceptionHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/GolfLeague.java" afterPath="$PROJECT_DIR$/src/group1/GolfLeague.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/MessageBoxes.java" afterPath="$PROJECT_DIR$/src/group1/MessageBoxes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/Player.java" afterPath="$PROJECT_DIR$/src/group1/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/PlayerValidationFlags.java" afterPath="$PROJECT_DIR$/src/group1/PlayerValidationFlags.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/TeamSort.java" afterPath="$PROJECT_DIR$/src/group1/TeamSort.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/Validator.java" afterPath="$PROJECT_DIR$/src/group1/Validator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/AddGameController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/AddGameController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/AddPlayerController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/AddPlayerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/AddTeamController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/AddTeamController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/ControlsDemoController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/ControlsDemoController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/ControlsDemoMain.java" afterPath="$PROJECT_DIR$/src/group1/controllers/ControlsDemoMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/EditTeamController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/EditTeamController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/PlayerRankComp.java" afterPath="$PROJECT_DIR$/src/group1/controllers/PlayerRankComp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/PlayerWarningController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/PlayerWarningController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/SearchPlayerRankController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/SearchPlayerRankController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/RootLayout.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/RootLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/controllers/TeamRankController.java" afterPath="$PROJECT_DIR$/src/group1/controllers/TeamRankController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java" afterPath="$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/database_connectors/ExportPlayerData.java" afterPath="$PROJECT_DIR$/src/group1/database_connectors/ExportPlayerData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/database_connectors/PushPlayerData.java" afterPath="$PROJECT_DIR$/src/group1/database_connectors/PushPlayerData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/database_connectors/getPlayerData.java" afterPath="$PROJECT_DIR$/src/group1/database_connectors/getPlayerData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/database_connectors/getTeamData.java" afterPath="$PROJECT_DIR$/src/group1/database_connectors/getTeamData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/add_game.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/add_game.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/add_player_warning.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/add_player_warning.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/add_teammate.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/add_teammate.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/edit_team.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/edit_team.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/enter_team_name.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/enter_team_name.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/player_ranks.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/player_ranks.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/search_player_rank.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/search_player_rank.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/team_rank.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/team_rank.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/team_ranks.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/team_ranks.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/fxml/welcome.fxml" afterPath="$PROJECT_DIR$/src/group1/fxml/welcome.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/group1/setRanks.java" afterPath="$PROJECT_DIR$/src/group1/setRanks.java" />
     </list>
     <ignored path="Golf League Final Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,101 +51,7 @@
     <favorites_list name="Golf League Final Project" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerRankController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Team.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/Team.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getTeamData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/getTeamData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamRankController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/controllers/TeamRankController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControlsDemoController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/group1/controllers/ControlsDemoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5794392">
-              <caret line="84" column="49" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchPlayerRankController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/controllers/SearchPlayerRankController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="welcome.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/fxml/welcome.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseConnector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -162,34 +83,40 @@
         <option value="$PROJECT_DIR$/src/group1/Main.java" />
         <option value="$PROJECT_DIR$/src/group1/MergeSort.java" />
         <option value="$PROJECT_DIR$/src/group1/Mergesort.java" />
-        <option value="$PROJECT_DIR$/src/group1/ExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/group1/BinarySearch.java" />
-        <option value="$PROJECT_DIR$/src/group1/fxml/add_teammate.fxml" />
         <option value="$PROJECT_DIR$/src/group1/fxml/player_ranks.fxml" />
         <option value="$PROJECT_DIR$/src/group1/fxml/team_ranks.fxml" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/group1/database_connectors/getPlayerData.java" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/AddPlayerController.java" />
-        <option value="$PROJECT_DIR$/src/group1/database_connectors/ExportPlayerData.java" />
         <option value="$PROJECT_DIR$/src/group1/Leadership_bst.java" />
-        <option value="$PROJECT_DIR$/src/group1/Validator.java" />
         <option value="$PROJECT_DIR$/src/group1/fxml/enter_team_name.fxml" />
-        <option value="$PROJECT_DIR$/src/group1/database_connectors/PushPlayerData.java" />
-        <option value="$PROJECT_DIR$/src/group1/fxml/add_game.fxml" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/AddTeamController.java" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/AddGameController.java" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/ControlsDemoMain.java" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/ControlsDemoController.java" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/EditTeamController.java" />
-        <option value="$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java" />
-        <option value="$PROJECT_DIR$/src/group1/Player.java" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java" />
-        <option value="$PROJECT_DIR$/src/group1/database_connectors/getTeamData.java" />
-        <option value="$PROJECT_DIR$/src/group1/GolfLeague.java" />
-        <option value="$PROJECT_DIR$/src/group1/controllers/TeamRankController.java" />
         <option value="$PROJECT_DIR$/src/group1/Team.java" />
         <option value="$PROJECT_DIR$/src/group1/fxml/welcome.fxml" />
+        <option value="$PROJECT_DIR$/src/group1/fxml/add_teammate.fxml" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/AddGameController.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/AddPlayerController.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/AddTeamController.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/ControlsDemoController.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/ControlsDemoMain.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/EditTeamController.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/PlayerRankComp.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/PlayerWarningController.java" />
+        <option value="$PROJECT_DIR$/src/group1/controllers/TeamRankController.java" />
+        <option value="$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java" />
+        <option value="$PROJECT_DIR$/src/group1/database_connectors/ExportPlayerData.java" />
+        <option value="$PROJECT_DIR$/src/group1/database_connectors/getPlayerData.java" />
+        <option value="$PROJECT_DIR$/src/group1/database_connectors/getTeamData.java" />
         <option value="$PROJECT_DIR$/src/group1/controllers/SearchPlayerRankController.java" />
+        <option value="$PROJECT_DIR$/src/group1/database_connectors/PushPlayerData.java" />
+        <option value="$PROJECT_DIR$/src/group1/BinarySearch.java" />
+        <option value="$PROJECT_DIR$/src/group1/ExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/group1/GolfLeague.java" />
+        <option value="$PROJECT_DIR$/src/group1/MessageBoxes.java" />
+        <option value="$PROJECT_DIR$/src/group1/Player.java" />
+        <option value="$PROJECT_DIR$/src/group1/PlayerValidationFlags.java" />
+        <option value="$PROJECT_DIR$/src/group1/setRanks.java" />
+        <option value="$PROJECT_DIR$/src/group1/Validator.java" />
+        <option value="$PROJECT_DIR$/src/group1/TeamSort.java" />
+        <option value="$PROJECT_DIR$/src/group1/fxml/add_game.fxml" />
       </list>
     </option>
   </component>
@@ -235,6 +162,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -340,11 +268,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37-bin.jar!/" />
+    <property name="last_opened_file_path" value="/Applications/JavaFX Scene Builder 2.0.app" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -860,7 +787,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449260139048</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Matt's enhanced GUI">
+      <created>1449677465828</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1449677465828</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -877,7 +810,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33768353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25611746" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25448614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23263328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -922,7 +855,8 @@
     <MESSAGE value="Added validation method to check for numbers only, used for adding a score for a player" />
     <MESSAGE value="teamRank" />
     <MESSAGE value="Displays Team Ranks!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Displays Team Ranks!" />
+    <MESSAGE value="Matt's enhanced GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Matt's enhanced GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -935,44 +869,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/getPlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1093,27 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/ExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41714948">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/PlayerValidationFlags.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2433372">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/BinarySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4463895">
-          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13010204">
@@ -1128,165 +1003,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/getPlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7364086">
-          <caret line="68" column="5" selection-start-line="14" selection-start-column="3" selection-end-line="68" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerWarningController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14442013">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/ExportPlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43220338">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/Validator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61538464">
-          <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/group1/fxml/player_ranks.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.111380145">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/fxml/hole.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/fxml/add_teammate.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/fxml/enter_team_name.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6174334">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/fxml/add_game.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.62069">
-          <caret line="22" column="105" selection-start-line="22" selection-start-column="105" selection-end-line="22" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/PushPlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="82" selection-start-line="96" selection-start-column="82" selection-end-line="96" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/AddGameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0">
-          <caret line="90" column="3" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/AddPlayerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03846154">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/AddTeamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61538464">
-          <caret line="81" column="5" selection-start-line="77" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/EditTeamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03846154">
-          <caret line="38" column="3" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/ControlsDemoMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="57" selection-start-line="70" selection-start-column="57" selection-end-line="70" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/GolfLeague.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="51" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/getTeamData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/TeamRankController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/fxml/hole.jpg">
-      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
@@ -1301,28 +1040,246 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/group1/fxml/enter_team_name.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5611702">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/AddGameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/group1/controllers/SearchPlayerRankController.java">
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/AddPlayerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/AddTeamController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="50" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/group1/controllers/ControlsDemoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5794392">
-          <caret line="84" column="49" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="52" selection-start-line="0" selection-start-column="52" selection-end-line="0" selection-end-column="52" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/ControlsDemoMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="63" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/EditTeamController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="66" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerRankComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerRankController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="74" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/PlayerWarningController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10489511">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1691#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/DatabaseConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10489511">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/ExportPlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17482518">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/getPlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/getTeamData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/SearchPlayerRankController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="71" selection-start-line="0" selection-start-column="71" selection-end-line="0" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/database_connectors/PushPlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06993007">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/controllers/TeamRankController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20979021">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/ExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10489511">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/BinarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="59" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/GolfLeague.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="65" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/MessageBoxes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="50" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06993007">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/PlayerValidationFlags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17482518">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/TeamSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/setRanks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10489511">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2587413">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/group1/fxml/add_game.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039893616">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

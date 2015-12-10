@@ -1,3 +1,5 @@
+//Binary search class example for searching for player rank
+
 package group1;
 
 import java.util.ArrayList;
@@ -6,9 +8,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Comparator;
 
-/**
- * Created by reesemodloff on 11/16/15.
- */
 public class BinarySearch {
 
     public static void main(String[] args){

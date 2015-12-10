@@ -1,3 +1,5 @@
+//Controller class for adding a player
+
 package group1.controllers;
 
 import group1.Player;
@@ -23,9 +25,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-/**
- * Created by rnice01 on 11/11/2015.
- */
 public class AddPlayerController implements Initializable{
 @FXML
     TextField FirstNameField, LastNameField, TeamField,HandicapField;

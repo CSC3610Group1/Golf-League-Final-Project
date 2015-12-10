@@ -1,3 +1,5 @@
+//Controller for the edit team page, to edit the players on a team
+
 package group1.controllers;
 
 
@@ -24,10 +26,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
-/**
- * Created by rnice01 on 11/13/2015.
- */
 public class EditTeamController implements Initializable {
     getPlayerData players;
     @FXML

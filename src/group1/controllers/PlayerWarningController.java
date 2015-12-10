@@ -1,3 +1,7 @@
+//This is the controller class for the pop up window to warn users if they
+//try canceling out of adding 4 players to a team. A team can not be made
+//without 4 playres so the window/controller is meant to handle that.
+
 package group1.controllers;
 
 import javafx.event.ActionEvent;
@@ -17,11 +21,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by rnice01 on 11/13/2015.
- * This is the controller class for the pop up window to warn users if they try canceling out of adding
- * 4 players to a team. A team can not be made without 4 playres so the window/controller is meant to handle that.
- */
 public class PlayerWarningController {
     @FXML
     Button btnOk, btnCancel;

@@ -1,9 +1,10 @@
+//Main golf league class creates teams with players in the league
+
 package group1;
 
 import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
-
 
 public class GolfLeague {
 

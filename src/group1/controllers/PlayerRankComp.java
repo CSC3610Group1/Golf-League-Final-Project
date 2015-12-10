@@ -1,12 +1,11 @@
+//Defines comparator to rank players
+
 package group1.controllers;
 
 import group1.Player;
 
 import java.util.Comparator;
 
-/**
- * Created by reesemodloff on 12/3/15.
- */
 //Player rank comparator
 public class PlayerRankComp implements Comparator<Player> {
 

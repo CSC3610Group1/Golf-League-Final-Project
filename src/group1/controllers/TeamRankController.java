@@ -1,3 +1,5 @@
+//Displays the ranked teams in the league
+
 package group1.controllers;
 
 import group1.Player;
@@ -22,9 +24,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-/**
- * Created by rnice01 on 11/17/2015.
- */
 public class TeamRankController implements Initializable{
 @FXML
     TableColumn<Team, String> colRank, colName, colScore;

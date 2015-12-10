@@ -1,13 +1,13 @@
+/**
+ * This class will used methods to sort the players and teams by score and return their rankings
+ */
+
 package group1;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-/**
- * Created by rnice01 on 10/15/2015.
- * This class will used methods to sort the players and teams by score and return their rankings
- */
 public class setRanks {
 
     public static Comparator<Player> playerScoreComparator = (p1, p2) -> {

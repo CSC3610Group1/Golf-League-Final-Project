@@ -1,3 +1,5 @@
+//Controller for the welcome page of the golf league
+
 package group1.controllers;
 
 import java.io.IOException;

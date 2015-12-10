@@ -1,3 +1,5 @@
+//Gets team data from the database
+
 package group1.database_connectors;
 
 import group1.ExceptionHandler;
@@ -7,9 +9,6 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- * Created by rnice01 on 10/15/2015.
- */
 public class getTeamData {
     DatabaseConnector connector;
 
