@@ -1,37 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-
 <?import group1.RestrictiveTextField?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.EditTeamController">
-   <children>
-      <Label alignment="CENTER" layoutX="228.0" layoutY="57.0" prefHeight="60.0" prefWidth="145.0" text="Team Editor">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="comboTeam" layoutX="226.0" layoutY="132.0" prefWidth="150.0" />
-      <ComboBox fx:id="comboPlayer" layoutX="226.0" layoutY="200.0" prefWidth="150.0" />
-      <RestrictiveTextField fx:id="fieldFirstName" layoutX="173.0" layoutY="296.0" prefHeight="25.0" prefWidth="111.0" />
-      <Label layoutX="149.0" layoutY="136.0" text="Select Team:" />
-      <Label fx:id="labelSelectPlayer" layoutX="86.0" layoutY="204.0" text="Select player to replace:" />
-      <Label fx:id="labelFirstName" layoutX="87.0" layoutY="300.0" text="First Name:" />
-      <Button fx:id="btnSubmitScore" layoutX="234.0" layoutY="339.0" mnemonicParsing="false" onAction="#submitScore" text="Submit" />
-      <Button layoutX="323.0" layoutY="339.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancel" />
-      <Label fx:id="labelTeamWarning" layoutX="391.0" layoutY="136.0" text="You need to select a team!" textFill="#ed6607" visible="false" />
-      <Label fx:id="labelPlayerWarning" layoutX="391.0" layoutY="204.0" text="You need to select a player!" textFill="#ed6607" visible="false" />
-      <Label fx:id="labelUpdateSuccess" layoutX="234.0" layoutY="378.0" prefHeight="17.0" prefWidth="178.0" text="Player has been replaced" textFill="#1c8097" visible="false" />
-      <RestrictiveTextField fx:id="fieldLastName" layoutX="366.0" layoutY="296.0" prefHeight="25.0" prefWidth="111.0" />
-      <Label fx:id="labelLastName" layoutX="301.0" layoutY="300.0" text="Last Name:" />
-      <Label fx:id="labelNewPlayer" layoutX="253.0" layoutY="255.0" text="New Player">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label fx:id="labelFirstNameWarning" layoutX="117.0" layoutY="269.0" text="Enter player's first name!" visible="false" />
-      <Label fx:id="labelLastNameWarning" layoutX="374.0" layoutY="269.0" text="Enter player's last name!" visible="false" />
-   </children>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0"
+      style="-fx-background-color: linear-gradient(#33cc33 0%, white 100%);"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="group1.controllers.EditTeamController">
+    <children>
+        <Label alignment="CENTER" layoutX="228.0" layoutY="57.0" prefHeight="60.0" prefWidth="145.0"
+               text="Team Editor" textFill="WHITE">
+            <font>
+                <Font name="Imprint MT Shadow" size="25.0"/>
+            </font>
+        </Label>
+        <ComboBox fx:id="comboTeam" layoutX="226.0" layoutY="132.0" prefWidth="150.0"/>
+        <ComboBox fx:id="comboPlayer" layoutX="226.0" layoutY="200.0" prefWidth="150.0"/>
+        <RestrictiveTextField fx:id="fieldFirstName" layoutX="173.0" layoutY="296.0"
+                              prefHeight="25.0" prefWidth="111.0"/>
+        <Label layoutX="149.0" layoutY="136.0" text="Select Team:" textFill="WHITE"/>
+        <Label fx:id="labelSelectPlayer" layoutX="86.0" layoutY="204.0" text="Select player to replace:" textFill="WHITE"/>
+        <Label fx:id="labelFirstName" layoutX="87.0" layoutY="300.0" text="First Name:"/>
+        <Button fx:id="btnSubmitScore" layoutX="234.0" layoutY="339.0" mnemonicParsing="false"
+                onAction="#submitScore"
+                style="-fx-background-color: white; -fx-background-radius: 10;" text="Submit"/>
+        <Button layoutX="323.0" layoutY="339.0" mnemonicParsing="false" onAction="#closeWindow"
+                style="-fx-background-color: white; -fx-background-radius: 10;" text="Cancel"/>
+        <Label fx:id="labelTeamWarning" layoutX="391.0" layoutY="136.0"
+               text="You need to select a team!" textFill="#ed6607" visible="false"/>
+        <Label fx:id="labelPlayerWarning" layoutX="391.0" layoutY="204.0"
+               text="You need to select a player!" textFill="#ed6607" visible="false"/>
+        <Label fx:id="labelUpdateSuccess" layoutX="234.0" layoutY="378.0" prefHeight="17.0"
+               prefWidth="178.0" text="Player has been replaced" textFill="#1c8097"
+               visible="false"/>
+        <RestrictiveTextField fx:id="fieldLastName" layoutX="366.0" layoutY="296.0"
+                              prefHeight="25.0" prefWidth="111.0"/>
+        <Label fx:id="labelLastName" layoutX="301.0" layoutY="300.0" text="Last Name:"/>
+        <Label fx:id="labelNewPlayer" layoutX="253.0" layoutY="255.0" text="New Player" textFill="WHITE">
+            <font>
+                <Font size="19.0"/>
+            </font>
+        </Label>
+        <Label fx:id="labelFirstNameWarning" layoutX="117.0" layoutY="269.0"
+               text="Enter player's first name!" visible="false"/>
+        <Label fx:id="labelLastNameWarning" layoutX="374.0" layoutY="269.0"
+               text="Enter player's last name!" visible="false"/>
+    </children>
 </Pane>

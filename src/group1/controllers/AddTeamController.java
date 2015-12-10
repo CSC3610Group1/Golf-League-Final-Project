@@ -20,10 +20,11 @@ import java.util.ResourceBundle;
  * to local database through pushTeamData method in the getTeamData class
  */
 public class AddTeamController implements Initializable {
+
     @FXML
     Label labelTeamExists;
     @FXML
-    Button btnOK;
+    Button btnOK, btnCancel;
     @FXML
     TextField enterTeamTextField;
     getTeamData getTeams;

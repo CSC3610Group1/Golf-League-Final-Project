@@ -25,9 +25,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-/**
- * Created by reesemodloff on 12/2/15.
- */
 public class SearchPlayerRankController implements Initializable {
     getPlayerData players;
     @FXML

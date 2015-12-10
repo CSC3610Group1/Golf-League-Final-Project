@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="247.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.ControlsDemoController">
+<AnchorPane prefHeight="247.0" prefWidth="501.0" style="-fx-background-color: linear-gradient(#33cc33 0%, white 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.ControlsDemoController">
  <children>
-      <Label layoutX="245.0" layoutY="57.0" prefHeight="55.0" prefWidth="110.0" text="Teams">
+      <Label layoutX="245.0" layoutY="57.0" prefHeight="55.0" prefWidth="110.0" text="Teams" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Imprint MT Shadow" size="36.0" />
          </font>
       </Label>
       <TextArea layoutX="167.0" layoutY="123.0" prefHeight="200.0" prefWidth="266.0" />
