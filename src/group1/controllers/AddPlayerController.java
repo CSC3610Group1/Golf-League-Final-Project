@@ -1,3 +1,5 @@
+//Controller to add players to the league
+
 package group1.controllers;
 
 import group1.*;

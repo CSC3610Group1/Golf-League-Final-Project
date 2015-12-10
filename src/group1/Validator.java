@@ -1,5 +1,4 @@
-/**
- * Purpose: Validates Player and Team objects and returns a PlayerValidationFlags
+/** Validates Player and Team objects and returns a PlayerValidationFlags
  * or TeamValidationFlags object with the errors that occurred
  */
 

@@ -1,5 +1,6 @@
-package group1.controllers;
+//This controller is to search for a players rank
 
+package group1.controllers;
 
 import group1.Player;
 import group1.Team;
@@ -25,9 +26,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-/**
- * Created by reesemodloff on 12/2/15.
- */
 public class SearchPlayerRankController implements Initializable {
     getPlayerData players;
     @FXML
