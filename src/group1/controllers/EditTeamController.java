@@ -4,9 +4,9 @@ package group1.controllers;
 
 
 import group1.*;
+import group1.database_connectors.PushPlayerData;
 import group1.database_connectors.getPlayerData;
 import group1.database_connectors.getTeamData;
-import group1.database_connectors.PushPlayerData;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -43,8 +43,7 @@ public class EditTeamController implements Initializable {
             List<String> validator = Validator.validatePlayer(new Player(fieldFirstName.getText().trim(),
                     fieldLastName.getText().trim(), 0, 0, 0, 0, 0)).getInvalidNames();
             if (!validator.isEmpty()) {
-                ErrorDialogBox errorDialogBox = new ErrorDialogBox(validator.stream()
-                        .collect(Collectors.joining("\n")));
+                new ErrorDialogBox(validator.stream().collect(Collectors.joining("\n")));
             } else {
                 noErrors = true;
             }
@@ -61,6 +60,15 @@ public class EditTeamController implements Initializable {
                     updated.showAndWait();
                     fieldFirstName.setText(null);
                     fieldLastName.setText(null);
+
+                    comboPlayer.getItems().clear();
+                    ArrayList<String> playerList;
+                    players = new getPlayerData();
+                    playerList = players.getPlayersByTeam(comboTeam.getValue());
+
+                    ObservableList<String> comboPlayerList = FXCollections.observableList(playerList);
+                    comboPlayer.getItems().addAll(comboPlayerList);
+                    comboPlayer.getSelectionModel().selectFirst();
 
                 } else {//If the updatescore method returns false, inform the user
                     labelUpdateSuccess.setVisible(true);
@@ -106,6 +114,11 @@ public class EditTeamController implements Initializable {
         btnSubmitScore.disableProperty().bind(Bindings.isEmpty(fieldFirstName.textProperty())
                 .or(Bindings.isEmpty(fieldLastName.textProperty())));
 
+        btnSubmitScore.defaultButtonProperty().bind(
+                btnSubmitScore.focusedProperty()
+                        .or(fieldFirstName.focusedProperty()
+                                .or(fieldLastName.focusedProperty())));
+
         //sets max length of text fields and filters input
         fieldFirstName.setMaxLength(25);
         fieldLastName.setMaxLength(25);
@@ -132,13 +145,14 @@ public class EditTeamController implements Initializable {
             //When an item from this combo box is selected, get the team name and pass it to the
             //method to connect to the database and get the player names associated with the
             //team name
-            ArrayList<String> playerList = new ArrayList<String>();
+            ArrayList<String> playerList = new ArrayList<>();
             players = new getPlayerData();
             playerList = players.getPlayersByTeam(comboTeam.getValue());
 
 
             ObservableList<String> comboPlayerList = FXCollections.observableList(playerList);
             comboPlayer.getItems().addAll(comboPlayerList);
+            comboPlayer.getSelectionModel().selectFirst();
         });
 
 

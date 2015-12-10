@@ -12,7 +12,7 @@ public final class Formatter {
 
     //creates filter for letter characters only
     public static final UnaryOperator<TextFormatter.Change> letterOnly = e -> {
-        e.setText(e.getText().replaceAll("[^a-z]", ""));
+        e.setText(e.getText().replaceAll("[^a-z^A-Z]", ""));
         return e;
     };
     //creates filter for numeric characters only

@@ -44,6 +44,9 @@ public final class Validator {
     }
 
    public static boolean validateTeam(Team team) {
+       if (isLetters(team.getTeamName())){
+           return true;
+       }
         return false;
     }
 

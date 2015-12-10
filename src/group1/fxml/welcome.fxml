@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane prefHeight="507.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#33cc33 0%, white 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.ControlsDemoController">
-   <children>
-      <Label alignment="CENTER" layoutX="79.0" layoutY="54.0" prefHeight="67.0" prefWidth="442.0" text="Welcome To the Outting" textAlignment="CENTER" textFill="#fcfaf8">
-         <font>
-            <Font name="Imprint MT Shadow" size="36.0" />
-         </font></Label>
-      <Button fx:id="btnExportData" layoutX="97.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Export Data" />
-      <Button fx:id="btnAddTeam" layoutX="235.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Add Team" />
-      <Button fx:id="btnRank" layoutX="375.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Rank" />
-      <Button fx:id="btnEditTeam" layoutX="97.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Edit Team" />
-      <Button fx:id="btnEnterScore" layoutX="375.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Enter Score" />
-      <Button fx:id="btnByTeam" layoutX="365.0" layoutY="155.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10;" text="By Team" visible="false" />
-      <Button fx:id="btnByPlayer" layoutX="440.0" layoutY="155.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10;" text="By Player" visible="false" />
-      <Button fx:id="btnSearchPlayerRank" layoutX="206.0" layoutY="198.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Search Player's Rank" />
-      <Label fx:id="userFeedback" layoutX="269.0" layoutY="252.0" text="Label" visible="false" />
-      <ImageView fitHeight="176.0" fitWidth="383.0" layoutX="165.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@hole.jpg" />
-         </image>
-      </ImageView>
-   </children>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="507.0" prefWidth="600.0"
+            style="-fx-background-image: url('../../../resources/grass.jpg');"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="group1.controllers.ControlsDemoController">
+    <children>
+        <Label alignment="CENTER" layoutX="79.0" layoutY="54.0" prefHeight="67.0" prefWidth="442.0"
+               text="Welcome To the Outting" textAlignment="CENTER" textFill="#fcfaf8">
+            <font>
+                <Font name="Imprint MT Shadow" size="36.0"/>
+            </font>
+        </Label>
+        <Button fx:id="btnExportData" layoutX="97.0" layoutY="155.0" mnemonicParsing="false"
+                prefHeight="25.0" prefWidth="97.0"
+                style="-fx-background-radius: 10; -fx-background-color: white;" text="Export Data"/>
+        <Button fx:id="btnAddTeam" layoutX="235.0" layoutY="155.0" mnemonicParsing="false"
+                prefHeight="25.0" prefWidth="97.0"
+                style="-fx-background-radius: 10; -fx-background-color: white;" text="Add Team"/>
+        <Button fx:id="btnRank" layoutX="375.0" layoutY="155.0" mnemonicParsing="false"
+                prefHeight="25.0" prefWidth="97.0"
+                style="-fx-background-radius: 10; -fx-background-color: white;" text="Rank"/>
+        <Button fx:id="btnEditTeam" layoutX="97.0" layoutY="198.0" mnemonicParsing="false"
+                prefHeight="25.0" prefWidth="97.0"
+                style="-fx-background-radius: 10; -fx-background-color: white;" text="Edit Team"/>
+        <Button fx:id="btnEnterScore" layoutX="375.0" layoutY="198.0" mnemonicParsing="false"
+                prefHeight="25.0" prefWidth="97.0"
+                style="-fx-background-radius: 10; -fx-background-color: white;" text="Enter Score"/>
+        <Button fx:id="btnByTeam" layoutX="365.0" layoutY="155.0" mnemonicParsing="false"
+                style="-fx-background-color: white; -fx-background-radius: 10;" text="By Team"
+                visible="false"/>
+        <Button fx:id="btnByPlayer" layoutX="440.0" layoutY="155.0" mnemonicParsing="false"
+                style="-fx-background-color: white; -fx-background-radius: 10;" text="By Player"
+                visible="false"/>
+        <Button fx:id="btnSearchPlayerRank" layoutX="206.0" layoutY="198.0" mnemonicParsing="false"
+                prefHeight="27.0" prefWidth="153.0"
+                style="-fx-background-radius: 10; -fx-background-color: white;"
+                text="Search Player's Rank"/>
+        <Label fx:id="userFeedback" layoutX="269.0" layoutY="252.0" style="-fx-background-color: white; -fx-background-radius: 5
+      ;" text="Label" visible="false"/>
+        <!--<ImageView fitHeight="176.0" fitWidth="383.0" layoutX="165.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+              <Image url="@hole.jpg" />
+           </image>
+        </ImageView>-->
+    </children>
 </AnchorPane>

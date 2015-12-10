@@ -20,8 +20,11 @@
         <ComboBox fx:id="comboPlayer" layoutX="226.0" layoutY="200.0" prefWidth="150.0"/>
         <RestrictiveTextField fx:id="fieldFirstName" layoutX="173.0" layoutY="296.0"
                               prefHeight="25.0" prefWidth="111.0"/>
+        <RestrictiveTextField fx:id="fieldLastName" layoutX="366.0" layoutY="296.0"
+                              prefHeight="25.0" prefWidth="111.0"/>
         <Label layoutX="149.0" layoutY="136.0" text="Select Team:" textFill="WHITE"/>
-        <Label fx:id="labelSelectPlayer" layoutX="86.0" layoutY="204.0" text="Select player to replace:" textFill="WHITE"/>
+        <Label fx:id="labelSelectPlayer" layoutX="86.0" layoutY="204.0"
+               text="Select player to replace:" textFill="WHITE"/>
         <Label fx:id="labelFirstName" layoutX="87.0" layoutY="300.0" text="First Name:"/>
         <Button fx:id="btnSubmitScore" layoutX="234.0" layoutY="339.0" mnemonicParsing="false"
                 onAction="#submitScore"
@@ -35,10 +38,9 @@
         <Label fx:id="labelUpdateSuccess" layoutX="234.0" layoutY="378.0" prefHeight="17.0"
                prefWidth="178.0" text="Player has been replaced" textFill="#1c8097"
                visible="false"/>
-        <RestrictiveTextField fx:id="fieldLastName" layoutX="366.0" layoutY="296.0"
-                              prefHeight="25.0" prefWidth="111.0"/>
         <Label fx:id="labelLastName" layoutX="301.0" layoutY="300.0" text="Last Name:"/>
-        <Label fx:id="labelNewPlayer" layoutX="253.0" layoutY="255.0" text="New Player" textFill="WHITE">
+        <Label fx:id="labelNewPlayer" layoutX="253.0" layoutY="255.0" text="New Player"
+               textFill="WHITE">
             <font>
                 <Font size="19.0"/>
             </font>

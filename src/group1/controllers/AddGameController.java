@@ -3,9 +3,9 @@
 package group1.controllers;
 
 import group1.*;
+import group1.database_connectors.PushPlayerData;
 import group1.database_connectors.getPlayerData;
 import group1.database_connectors.getTeamData;
-import group1.database_connectors.PushPlayerData;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -44,10 +44,10 @@ public class AddGameController implements Initializable {
             validator = Validator.isScoreValid(fieldScore.getText().trim());
             if (!validator.isEmpty()) {
                 //sets error dialog box to contain all errors from validator
-                ErrorDialogBox errorDialogBox = new ErrorDialogBox(validator);
+                new ErrorDialogBox(validator);
                 fieldScore.setText(null);
             } else {
-               noErrors = true;
+                noErrors = true;
 
             }
             //If all the fields are filled in correctly, push the data to the database, method returns true if update runs successfully
@@ -147,6 +147,7 @@ public class AddGameController implements Initializable {
 
             ObservableList<String> comboPlayerList = FXCollections.observableList(playerList);
             comboPlayer.getItems().addAll(comboPlayerList);
+            comboPlayer.getSelectionModel().selectFirst();
         });
 
 

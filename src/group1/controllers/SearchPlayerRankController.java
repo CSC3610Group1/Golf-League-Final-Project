@@ -46,6 +46,7 @@ public class SearchPlayerRankController implements Initializable {
 
 
             root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/search_player_rank.fxml"));
+            root.setStyle("-fx-background-image: url('grass.jpg');");
             stage = new Stage();
             stage.setTitle("Find a players rank");
             stage.setScene(new Scene(root, 600, 450));
@@ -134,7 +135,7 @@ public class SearchPlayerRankController implements Initializable {
             }
         }
         //Add all the teams to the combobox
-        ObservableList<String> comboTeamList = FXCollections.observableList(teamList);
+        ObservableList<String> comboTeamList = FXCollections.observableList(teamList).sorted();
         comboTeam.getItems().addAll(comboTeamList);
 
 
@@ -153,6 +154,7 @@ public class SearchPlayerRankController implements Initializable {
 
             ObservableList<String> comboPlayerList = FXCollections.observableList(playerList);
             comboPlayer.getItems().addAll(comboPlayerList);
+            comboPlayer.getSelectionModel().selectFirst();
         });
 
         btnGetRank.setOnAction((e) -> {

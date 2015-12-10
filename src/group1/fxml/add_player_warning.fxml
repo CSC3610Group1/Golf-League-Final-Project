@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="525.0" style="-fx-background-color: linear-gradient(#33cc33 0%, white 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.PlayerWarningController">
-   <children>
-      <Label layoutX="54.0" layoutY="29.0" prefHeight="33.0" prefWidth="99.0" text="Warning!" textFill="WHITE">
-         <font>
-            <Font name="Imprint MT Shadow" size="15.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnOk" layoutX="233.0" layoutY="170.0" mnemonicParsing="false" onAction="#abortAddPlayer" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Confirm" />
-      <Button fx:id="btnCancel" layoutX="332.0" layoutY="170.0" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cancel" />
-      <Label alignment="CENTER" layoutX="122.0" layoutY="62.0" prefHeight="97.0" prefWidth="281.0" text="Not enough players have been added to your team. If you cancel your team will not be created, click confirm to abort team creation or click cancel to add more players." textFill="WHITE" wrapText="true">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-   </children>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="220.0" prefWidth="525.0"
+      style="-fx-background-image: url('../../../resources/grass.jpg');"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="group1.controllers.PlayerWarningController">
+    <children>
+        <Label layoutX="54.0" layoutY="29.0" prefHeight="33.0" prefWidth="99.0" text="Warning!"
+               textFill="WHITE">
+            <font>
+                <Font name="Imprint MT Shadow" size="15.0"/>
+            </font>
+        </Label>
+        <Button fx:id="btnOk" layoutX="233.0" layoutY="170.0" mnemonicParsing="false"
+                onAction="#abortAddPlayer" prefHeight="25.0" prefWidth="60.0"
+                style="-fx-background-color: white; -fx-background-radius: 10;" text="Confirm"/>
+        <Button fx:id="btnCancel" layoutX="332.0" layoutY="170.0" mnemonicParsing="false"
+                onAction="#closeWindow"
+                style="-fx-background-color: white; -fx-background-radius: 10;" text="Cancel"/>
+        <Label alignment="CENTER" layoutX="122.0" layoutY="62.0" prefHeight="97.0" prefWidth="281.0"
+               text="Not enough players have been added to your team. If you cancel your team will not be created, click confirm to abort team creation or click cancel to add more players."
+               textFill="WHITE" wrapText="true">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+    </children>
 </Pane>

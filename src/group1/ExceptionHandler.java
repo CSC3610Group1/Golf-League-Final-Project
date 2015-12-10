@@ -7,18 +7,12 @@ package group1;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
-import javax.swing.*;
-import java.util.stream.Collectors;
-
-public class ExceptionHandler extends Exception{
-    static JOptionPane frame;
-    public static void sqlException(){
-        JOptionPane.showMessageDialog( frame,
-                "Could not connect to the Network, if problem persists please contact your administrator", "Error",
-                JOptionPane.ERROR_MESSAGE);
+public class ExceptionHandler extends Exception {
+    public static void sqlException() {
+        new ErrorDialogBox("Could not connect to the Network, if problem persists please contact your administrator");
     }
 
-    public static void numberFormatException(String errorMessage){
+    public static void numberFormatException(String errorMessage) {
         Alert exception = new Alert(Alert.AlertType.ERROR);
         exception.setTitle("Error");
         exception.setHeaderText("Invalid Input");
@@ -26,9 +20,6 @@ public class ExceptionHandler extends Exception{
         exception.setContentText(errorMessage);
         exception.showAndWait();
     }
-
-
-
 
 
 }

@@ -2,22 +2,20 @@
 
 package group1.controllers;
 
-import group1.Team;
-import group1.Validator;
+import group1.*;
 import group1.database_connectors.getTeamData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
- * Created by rnice01 on 11/11/2015.
  * This is the controller for the interface for adding the teams, pushes team name and default score of 0
  * to local database through pushTeamData method in the getTeamData class
  */
@@ -28,19 +26,21 @@ public class AddTeamController implements Initializable {
     @FXML
     Button btnOK, btnCancel;
     @FXML
-    TextField enterTeamTextField;
+    RestrictiveTextField enterTeamTextField;
     getTeamData getTeams;
-    Validator validator;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         getTeams = new getTeamData();
-        validator = new Validator();
+
 
         //sets btnOK to default button so that the button will trigger on enter when the EnterNameTextField
         btnOK.defaultButtonProperty().bind(btnOK.focusedProperty().or(enterTeamTextField.focusedProperty()));
         //disables the btnOk until text is entered
         btnOK.disableProperty().bind(javafx.beans.binding.Bindings.isEmpty(enterTeamTextField.textProperty()));
+
+        enterTeamTextField.setMaxLength(20);
+        enterTeamTextField.setTextFormatter(new TextFormatter<>(Formatter.letterOnly));
 
         btnOK.setOnAction((event) -> {
             //Create a new team object, get the name from the field and default the team score to 0
@@ -56,19 +56,9 @@ public class AddTeamController implements Initializable {
                 for (Team t : getTeams.getTeams()) {
                     compareTeamNames.add(t.getTeamName());
                 }
-                if (validator.isLetters(name) == false) {
-                    enterTeamTextField.setText(null);
-                    labelTeamExists.setVisible(true);
-                    labelTeamExists.setText("Team name must contain only letters");
-                } else if (validator.validateTeamNameLength(name) == false) {
-                    enterTeamTextField.setText(null);
-                    labelTeamExists.setVisible(true);
-                    labelTeamExists.setText("Team name must be 2-20 characters");
-                } else if (compareTeamNames.contains(name)) {
-                    //If the team name exists, clear the field and notify the user
-                    enterTeamTextField.setText(null);
-                    labelTeamExists.setVisible(true);
-                    labelTeamExists.setText("A team with that name already exists, please try another name");
+                if (!Validator.validateTeam(team)) {
+                  new ErrorDialogBox("Team name must contain only letters");
+
                 } else if (!compareTeamNames.contains(name)) {
                     //Pass the team object to the add player controller to later
                     //add both the team and the players to the database

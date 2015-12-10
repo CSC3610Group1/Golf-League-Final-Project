@@ -26,7 +26,7 @@ public class TeamRankController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         getTeamData data = new getTeamData();
 
-        ArrayList<Team> teamList = new ArrayList<Team>();
+        ArrayList<Team> teamList = new ArrayList<>();
         teamList.addAll(data.getTeams());
 
         ArrayList<Team> teamsWithScore = new ArrayList<>();
@@ -38,7 +38,7 @@ public class TeamRankController implements Initializable{
 
         }
 
-        Collections.sort(teamList, Team.teamScoreComparator);
+        Collections.sort(teamsWithScore, Team.teamScoreComparator);
 
         int rank = 1;
         for(Team team: teamsWithScore){

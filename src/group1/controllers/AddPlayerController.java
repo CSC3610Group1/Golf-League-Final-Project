@@ -3,8 +3,8 @@
 package group1.controllers;
 
 import group1.*;
-import group1.database_connectors.getTeamData;
 import group1.database_connectors.PushPlayerData;
+import group1.database_connectors.getTeamData;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -42,8 +43,8 @@ public class AddPlayerController implements Initializable {
     Button btnOK, btnCancel, btnClose;
     @FXML
     Label labelMaxPlayers;
-
     ArrayList<Player> playerList = new ArrayList<>();
+    private Image imageIcon = new Image("golf-green.png");
 
     //Method to start the stage and take the team name passed from the Add Team stage
     //Team is made static to allow access of object when pushing the players and team
@@ -53,8 +54,10 @@ public class AddPlayerController implements Initializable {
         this.team = team;
         Parent root;
         try {
+
             root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/add_teammate.fxml"));
             Stage stage = new Stage();
+            stage.getIcons().add(imageIcon);
             stage.setTitle("Enter Teammate");
             stage.setScene(new Scene(root, 600, 450));
             stage.show();
@@ -79,8 +82,8 @@ public class AddPlayerController implements Initializable {
                         .or(lastNameField.focusedProperty())
                         .or(handicapField.focusedProperty()));
 
-        lastNameField.setMaxLength(25);
-        firstNameField.setMaxLength(25);
+        lastNameField.setMaxLength(20);
+        firstNameField.setMaxLength(20);
         handicapField.setMaxLength(2);
 
         lastNameField.setTextFormatter(new TextFormatter<>(Formatter.letterOnly));
@@ -111,8 +114,8 @@ public class AddPlayerController implements Initializable {
 
         if (playerList.size() == 3) {
             //Create and add the last player object to the object arraylist before pushing the data to DB
-            int handi = Integer.parseInt(handicapField.getText());
-            Player player = new Player(firstNameField.getText(), lastNameField.getText(), 0, 0, handi, 0, 0, team.getTeamName());
+            int handi = Integer.parseInt(handicapField.getText().trim());
+            Player player = new Player(firstNameField.getText().trim(), lastNameField.getText().trim(), 0, 0, handi, 0, 0, team.getTeamName());
             playerList.add(player);
             //If all 4 players have been added, clear the fields and push the data
             firstNameField.setVisible(false);
@@ -143,20 +146,20 @@ public class AddPlayerController implements Initializable {
         } else {
             //Get the data from the fields and create a new player object
 
-
             try {
-                int handi = Integer.parseInt(handicapField.getText());
-                Player player = new Player(firstNameField.getText(), lastNameField.getText(), 0, 0, handi, 0, 0, team.getTeamName());
+                int handi = Integer.parseInt(handicapField.getText().trim());
+                Player player = new Player(firstNameField.getText().trim(),
+                        lastNameField.getText().trim(), 0, 0, handi, 0, 0, team.getTeamName());
                 //validates the player object and returns a list of errors
                 List<String> validator = Validator.validatePlayer(player).getAllInvalid();
                 if (!validator.isEmpty()) {
                     //sets error dialog box to contain all errors from validator
-                    ErrorDialogBox errorDialogBox = new ErrorDialogBox(
-                            validator.stream().collect(Collectors.joining("\n -")));
+                    new ErrorDialogBox(validator.stream().collect(Collectors.joining("\n -")));
 
                 } else {
 
-                    System.out.println(player.getFirstName() + " " + player.getLastName() + " " + player.getHandicap());
+                    System.out.println(player.getFirstName() + " " + player.getLastName()
+                            + " " + player.getHandicap());
                     System.out.println(playerList.size());
                     //Add the new player object to the arraylist for player objects
                     playerList.add(player);
