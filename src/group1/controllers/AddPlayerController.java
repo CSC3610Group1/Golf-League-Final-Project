@@ -1,11 +1,9 @@
-//Controller class for adding a player
-
 package group1.controllers;
 
-import group1.Player;
-import group1.Team;
-import group1.database_connectors.PushPlayerData;
+import group1.*;
 import group1.database_connectors.getTeamData;
+import group1.database_connectors.PushPlayerData;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,23 +14,33 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
-public class AddPlayerController implements Initializable{
-@FXML
-    TextField FirstNameField, LastNameField, TeamField,HandicapField;
-@FXML
-Button btnOK, btnCancel, btnClose;
-@FXML
+public class AddPlayerController implements Initializable {
+
+    static Team team;
+    @FXML
+    RestrictiveTextField firstNameField;
+    @FXML
+    RestrictiveTextField lastNameField;
+    @FXML
+    RestrictiveTextField handicapField;
+
+    @FXML
+    TextField TeamField;
+    @FXML
+    Button btnOK, btnCancel, btnClose;
+    @FXML
     Label labelMaxPlayers;
-static Team team;
+
     ArrayList<Player> playerList = new ArrayList<>();
 
     //Method to start the stage and take the team name passed from the Add Team stage
@@ -40,7 +48,7 @@ static Team team;
     //to the database
     public void addPlayerController(Team team) {
         //Team object is set here
-      this.team = team;
+        this.team = team;
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/add_teammate.fxml"));
@@ -55,27 +63,42 @@ static Team team;
     }
 
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        btnOK.disableProperty().bind(
+                Bindings.isEmpty(firstNameField.textProperty())
+                        .or(Bindings.isEmpty(lastNameField.textProperty())
+                                .or(Bindings.isEmpty(handicapField.textProperty()))));
 
+        btnOK.defaultButtonProperty().bind(
+                btnOK.focusedProperty()
+                        .or(firstNameField.focusedProperty())
+                        .or(lastNameField.focusedProperty())
+                        .or(handicapField.focusedProperty()));
+
+        lastNameField.setMaxLength(25);
+        firstNameField.setMaxLength(25);
+        handicapField.setMaxLength(2);
+
+        lastNameField.setTextFormatter(new TextFormatter<>(Formatter.letterOnly));
+        firstNameField.setTextFormatter(new TextFormatter<>(Formatter.letterOnly));
+        handicapField.setTextFormatter(new TextFormatter<>(Formatter.numericOnlyFormatter));
 
     }
 
     //Closes the stage if cancel button is clicked
     //Check if a full team has been added before cancellation
     public void closeWindow(ActionEvent actionEvent) {
-        if(playerList.size() < 3){
+        if (playerList.size() < 3) {
             PlayerWarningController warn = new PlayerWarningController();
             //Pop up window to warn users that team will not be added if
             //enough players have been added
             warn.addPlayerWarning();
 
-        }else{
-            Node source = (Node)  actionEvent.getSource();
-            Stage stage  = (Stage) source.getScene().getWindow();
+        } else {
+            Node source = (Node) actionEvent.getSource();
+            Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
         }
 
@@ -83,15 +106,16 @@ static Team team;
 
 
     public void addPlayer(ActionEvent actionEvent) {
-        if(playerList.size() == 3) {
+
+        if (playerList.size() == 3) {
             //Create and add the last player object to the object arraylist before pushing the data to DB
-            int handi = Integer.parseInt(HandicapField.getText());
-            Player player = new Player(FirstNameField.getText(), LastNameField.getText(), 0, 0, handi, 0, 0,team.getTeamName());
+            int handi = Integer.parseInt(handicapField.getText());
+            Player player = new Player(firstNameField.getText(), lastNameField.getText(), 0, 0, handi, 0, 0, team.getTeamName());
             playerList.add(player);
             //If all 4 players have been added, clear the fields and push the data
-            FirstNameField.setVisible(false);
-            LastNameField.setVisible(false);
-            HandicapField.setVisible(false);
+            firstNameField.setVisible(false);
+            lastNameField.setVisible(false);
+            handicapField.setVisible(false);
 
             //Creating instances of database connecting classes to access their methods
             PushPlayerData push = new PushPlayerData();
@@ -99,7 +123,7 @@ static Team team;
             try {
                 //If both JDBC methods return true
                 //Show label to confirm with user
-                if(push.pushPlayerData(playerList) && pushTeam.pushTeamData(team) ){
+                if (push.pushPlayerData(playerList) && pushTeam.pushTeamData(team)) {
                     labelMaxPlayers.setVisible(true);
                     labelMaxPlayers.setText("All players and team have been added successfully");
 
@@ -107,30 +131,40 @@ static Team team;
                     btnCancel.setVisible(false);
                     btnOK.setVisible(false);
                     btnClose.setVisible(true);
-                }
-                else{
+                } else {
                     labelMaxPlayers.setVisible(true);
                     labelMaxPlayers.setText("There was a networking error, please contact your administrator if problem persists");
                 }
-            } catch (SQLException e1) {
-                e1.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            catch(ClassNotFoundException ex2){
-                ex2.printStackTrace();
-            }
-        }
-        else{
+        } else {
             //Get the data from the fields and create a new player object
-            int handi = Integer.parseInt(HandicapField.getText());
-            Player player = new Player(FirstNameField.getText(), LastNameField.getText(), 0, 0, handi, 0, 0,team.getTeamName());
-            System.out.println(player.getFirstName() + " " + player.getLastName() + " " + player.getHandicap());
-            System.out.println(playerList.size());
-            //Add the new player object to the arraylist for player objects
-            playerList.add(player);
 
-            FirstNameField.setText(null);
-            LastNameField.setText(null);
-            HandicapField.setText(null);
+
+            try {
+                int handi = Integer.parseInt(handicapField.getText());
+                Player player = new Player(firstNameField.getText(), lastNameField.getText(), 0, 0, handi, 0, 0, team.getTeamName());
+                //validates the player object and returns a list of errors
+                List<String> validator = Validator.validatePlayer(player).getAllInvalid();
+                if (!validator.isEmpty()) {
+                    //sets error dialog box to contain all errors from validator
+                    ErrorDialogBox errorDialogBox = new ErrorDialogBox(
+                            validator.stream().collect(Collectors.joining("\n -")));
+
+                } else {
+
+                    System.out.println(player.getFirstName() + " " + player.getLastName() + " " + player.getHandicap());
+                    System.out.println(playerList.size());
+                    //Add the new player object to the arraylist for player objects
+                    playerList.add(player);
+                    firstNameField.setText(null);
+                    lastNameField.setText(null);
+                    handicapField.setText(null);
+                }
+            } catch (Exception e) {
+                ExceptionHandler.numberFormatException("Handicap must be a positive number");
+            }
 
         }
 

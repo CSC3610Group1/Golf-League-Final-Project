@@ -6,13 +6,10 @@
 
 package group1.database_connectors;
 
-import group1.ExceptionHandler;
 import group1.Player;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ExportPlayerData {

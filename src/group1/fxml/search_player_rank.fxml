@@ -5,19 +5,19 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#33cc33 0%, white 100%);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.SearchPlayerRankController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group1.controllers.SearchPlayerRankController">
     <children>
-        <Label alignment="CENTER" layoutX="117.0" layoutY="52.0" prefHeight="60.0" prefWidth="341.0" text="Search for Player's Rank" textFill="#f5f5f5">
+        <Label alignment="CENTER" layoutX="117.0" layoutY="52.0" prefHeight="60.0" prefWidth="341.0" text="Search for Player's Rank">
             <font>
-                <Font name="Imprint MT Shadow" size="25.0" />
+                <Font size="25.0" />
             </font>
         </Label>
         <ComboBox fx:id="comboTeam" layoutX="226.0" layoutY="132.0" prefWidth="150.0" />
         <ComboBox fx:id="comboPlayer" layoutX="226.0" layoutY="200.0" prefWidth="150.0" />
-        <Label layoutX="124.0" layoutY="136.0" text="Select Team:" textFill="#fcfafa" />
-        <Label layoutX="57.0" layoutY="205.0" text="Select player to find rank:" textFill="#fcfcfc" />
-        <Button fx:id="btnGetRank" layoutX="204.0" layoutY="254.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-radius: 10;" text="Get Rank" />
-        <Button layoutX="330.0" layoutY="254.0" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cancel" />
+        <Label fx:id="labelSelectTeam" layoutX="124.0" layoutY="136.0" text="Select Team:" />
+        <Label fx:id="labelSelectPlayerRank" layoutX="57.0" layoutY="205.0" text="Select player to find rank:" />
+        <Button fx:id="btnGetRank" layoutX="204.0" layoutY="254.0" mnemonicParsing="false" text="Get Rank" />
+        <Button layoutX="330.0" layoutY="254.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancel" />
         <Label fx:id="labelTeamWarning" layoutX="391.0" layoutY="136.0" text="You need to select a team!" textFill="#ed6607" visible="false" />
         <Label fx:id="labelPlayerWarning" layoutX="391.0" layoutY="204.0" text="You need to select a player!" textFill="#ed6607" visible="false" />
       <Label fx:id="labelPlayerRank" layoutX="60.0" layoutY="298.0" prefHeight="48.0" prefWidth="468.0" />
