@@ -13,12 +13,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -56,6 +54,7 @@ public class AddPlayerController implements Initializable {
         try {
 
             root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/add_teammate.fxml"));
+            root.setStyle("-fx-background-image: url('grass.jpg')");
             Stage stage = new Stage();
             stage.getIcons().add(imageIcon);
             stage.setTitle("Enter Teammate");
@@ -85,7 +84,6 @@ public class AddPlayerController implements Initializable {
         lastNameField.setMaxLength(20);
         firstNameField.setMaxLength(20);
         handicapField.setMaxLength(2);
-
         lastNameField.setTextFormatter(new TextFormatter<>(Formatter.letterOnly));
         firstNameField.setTextFormatter(new TextFormatter<>(Formatter.letterOnly));
         handicapField.setTextFormatter(new TextFormatter<>(Formatter.numericOnlyFormatter));
@@ -163,6 +161,12 @@ public class AddPlayerController implements Initializable {
                     System.out.println(playerList.size());
                     //Add the new player object to the arraylist for player objects
                     playerList.add(player);
+                   /* Alert updated = new Alert(Alert.AlertType.INFORMATION);
+                    updated.setTitle("");
+                    updated.setHeaderText("Player Added");
+                    updated.setContentText("The Player Has Been Added");
+                    updated.initStyle(StageStyle.UTILITY);
+                    updated.showAndWait();*/
                     firstNameField.setText(null);
                     lastNameField.setText(null);
                     handicapField.setText(null);

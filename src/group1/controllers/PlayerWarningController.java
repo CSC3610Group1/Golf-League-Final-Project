@@ -33,6 +33,7 @@ public class PlayerWarningController {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("group1/fxml/add_player_warning.fxml"));
             this.stage = new Stage();
             this.stage.setTitle("Enter Teammate");
+            root.setStyle("-fx-background-image: url('grass.jpg')");
             this.stage.setScene(new Scene(root, 500, 250));
             this.stage.show();
 

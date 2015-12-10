@@ -57,8 +57,10 @@ public class AddTeamController implements Initializable {
                     compareTeamNames.add(t.getTeamName());
                 }
                 if (!Validator.validateTeam(team)) {
-                  new ErrorDialogBox("Team name must contain only letters");
+                    new ErrorDialogBox("Team name must contain only letters");
 
+                } else if (compareTeamNames.contains(name)) {
+                    new ErrorDialogBox("This name already exists");
                 } else if (!compareTeamNames.contains(name)) {
                     //Pass the team object to the add player controller to later
                     //add both the team and the players to the database

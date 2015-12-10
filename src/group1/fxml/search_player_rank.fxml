@@ -18,8 +18,8 @@
         <Label layoutX="57.0" layoutY="205.0" text="Select player to find rank:" textFill="#fcfcfc" />
         <Button fx:id="btnGetRank" layoutX="204.0" layoutY="254.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-radius: 10;" text="Get Rank" />
         <Button layoutX="330.0" layoutY="254.0" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: white; -fx-background-radius: 10;" text="Cancel" />
-        <Label fx:id="labelTeamWarning" layoutX="391.0" layoutY="136.0" text="You need to select a team!" textFill="#ed6607" visible="false" />
-        <Label fx:id="labelPlayerWarning" layoutX="391.0" layoutY="204.0" text="You need to select a player!" textFill="#ed6607" visible="false" />
-      <Label fx:id="labelPlayerRank" layoutX="60.0" layoutY="298.0" prefHeight="48.0" prefWidth="468.0" />
+        <Label fx:id="labelTeamWarning"  style="-fx-background-color: white; -fx-background-radius: 10;" layoutX="391.0" layoutY="136.0" text="You need to select a team!" textFill="#ed6607" visible="false" />
+        <Label fx:id="labelPlayerWarning"  style="-fx-background-color: white; -fx-background-radius: 10;" layoutX="391.0" layoutY="204.0" text="You need to select a player!" textFill="#ed6607" visible="false" />
+      <Label fx:id="labelPlayerRank"  style="-fx-background-color: white; -fx-background-radius: 10;" layoutX="60.0" layoutY="298.0" />
     </children>
 </Pane>
